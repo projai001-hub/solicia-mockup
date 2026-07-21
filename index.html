@@ -909,6 +909,64 @@
   .hal-silent .silent{border-color:rgba(226,184,126,.45);font-size:15px;padding:6px 18px}
   .hal-note{font-size:12.5px;color:var(--ivory-soft);max-width:36ch;line-height:1.6}
 
+  /* ---------- light interactive inbox ---------- */
+  .inboxx2{max-width:1280px;margin:0 auto;border-radius:26px;overflow:hidden;color:var(--ink);
+    background:linear-gradient(160deg,rgba(253,253,252,.97),rgba(244,243,239,.94));
+    box-shadow:0 50px 110px -34px rgba(0,0,0,.7),inset 0 1.5px 0 #fff}
+  .ix-top{display:flex;align-items:center;gap:8px;padding:18px 24px 10px;position:relative}
+  .ix-top i{width:10px;height:10px;border-radius:50%;background:rgba(20,19,16,.12)}
+  .ix-top span{position:absolute;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-mut)}
+  .ix-tool{display:flex;align-items:center;gap:16px;padding:8px 24px 16px}
+  .ix-compose{appearance:none;border:0;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:580;
+    padding:12px 22px;border-radius:14px;color:var(--ivory);
+    background:linear-gradient(180deg,var(--burglt),var(--burg2));
+    box-shadow:0 14px 30px -12px rgba(110,35,56,.7),inset 0 1.5px 0 rgba(255,255,255,.32);transition:transform .2s}
+  .ix-compose:hover{transform:translateY(-1px)}
+  .ix-compose:active{transform:scale(.97)}
+  .ix-hint{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mut)}
+  .ix-body{position:relative;height:430px;margin:0 24px 24px}
+  .ix-view{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(8px);
+    transition:opacity .45s var(--ease),transform .45s var(--ease);display:flex;flex-direction:column;gap:12px}
+  .ix-view.on{opacity:1;pointer-events:auto;transform:none}
+  .ixr{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;background:#fff;
+    border:1px solid rgba(20,19,16,.05);box-shadow:0 10px 26px -14px rgba(56,44,32,.25),inset 0 1px 0 #fff;
+    transition:transform .3s}
+  .ixr:hover{transform:translateY(-1px)}
+  .ixav{width:38px;height:38px;border-radius:50%;background:var(--panel);color:var(--ink-soft);font-size:12.5px;font-weight:620;display:grid;place-items:center;flex:none}
+  .ixav-s{background:linear-gradient(160deg,var(--burglt),var(--burg2));color:#fff}
+  .ixb{min-width:0;flex:1}
+  .ixb b{display:block;font-size:14px;font-weight:600}
+  .ixb span{display:block;font-size:12.5px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ixt{font-size:12px;color:var(--ink-mut);display:inline-flex;align-items:center;gap:7px;flex:none}
+  .ixdot{width:7px;height:7px;border-radius:50%;background:var(--gold);display:none}
+  .ixdot.on{display:block}
+  .ixr-new{display:none;background:linear-gradient(160deg,#fff,#FBF6EE);border-color:rgba(192,138,78,.32)}
+  .ixr-new.show{display:flex;animation:capIn .5s var(--ease) both}
+  .ix-card{background:#fff;border-radius:18px;border:1px solid rgba(20,19,16,.06);
+    box-shadow:0 16px 40px -18px rgba(56,44,32,.3);padding:20px 26px;display:flex;flex-direction:column}
+  .ix-fld{display:flex;gap:12px;align-items:baseline;padding:12px 2px;border-bottom:1px solid rgba(20,19,16,.07);font-size:13.5px}
+  .ix-fld label{color:var(--ink-mut);min-width:56px;font-size:12.5px}
+  .ix-fld b{font-weight:580}
+  .chip2{background:rgba(110,35,56,.08);color:var(--burg);border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:580}
+  .ix-typebody{padding:18px 2px 10px;font-size:14px;min-height:88px;color:var(--ink);line-height:1.65}
+  .ix-send{align-self:flex-end;font-size:13.5px;font-weight:580;color:var(--ivory);cursor:default;
+    background:linear-gradient(180deg,var(--burglt),var(--burg2));padding:9px 28px;border-radius:999px;
+    box-shadow:0 12px 26px -12px rgba(110,35,56,.7),inset 0 1.5px 0 rgba(255,255,255,.3);transition:transform .25s}
+  .ix-send.pressed{transform:scale(.92)}
+  .ix-sub{font-family:var(--display);font-weight:580;font-size:17.5px;letter-spacing:-.01em;padding-bottom:12px;border-bottom:1px solid rgba(20,19,16,.08)}
+  .ixm{background:#fff;border-radius:16px;border:1px solid rgba(20,19,16,.05);
+    box-shadow:0 10px 26px -14px rgba(56,44,32,.22);padding:16px 20px;max-width:660px}
+  .ixm-s{background:linear-gradient(160deg,#fff,#FBF6F2)}
+  .eh2{display:flex;gap:10px;align-items:center;margin-bottom:9px}
+  .eh2 b{display:block;font-size:13.5px;font-weight:600}
+  .eh2 span{display:block;font-size:11.5px;color:var(--ink-mut)}
+  .ixm p{font-size:14px;color:var(--ink-soft);line-height:1.65}
+  .ix-att{display:inline-flex;align-items:center;gap:10px;margin-top:12px;padding:10px 15px 10px 11px;border-radius:12px;
+    background:var(--bg2);border:1px solid rgba(20,19,16,.07)}
+  .ix-att .fic{width:30px;height:30px;border-radius:8px;font-size:8.5px;display:grid;place-items:center;font-weight:640;color:#fff}
+  .ix-att b{display:block;font-size:12.5px;font-weight:580}
+  .ix-att span{font-size:11px;color:var(--ink-mut)}
+
   /* ---------- demo sizing + compose ---------- */
   #sec-demo{padding:clamp(60px,6vw,90px) 0}
   #sec-demo .sechead{margin-bottom:clamp(28px,3vw,44px)}
@@ -1263,36 +1321,34 @@
       <h2>Watch a matter come back.</h2>
       <p class="lede" style="max-width:44ch;margin-left:auto;margin-right:auto">One address. The instruction goes out, and the finished file returns to the same thread.</p>
     </div>
-    <div class="inboxx lg-dark rv">
-      <div class="ib-bar"><i></i><i></i><i></i><em>Inbox, today</em><button class="ib-run" id="ib-run" type="button">+ Compose</button><span class="ib-hint">Click to run the thread</span></div>
-      <div class="ib-body">
-        <div class="ib-list">
-          <div class="ib-row on"><b>Solicia</b>Aurora termination fees</div>
-          <div class="ib-row"><b>Solicia</b>Meridian change-of-control register</div>
-          <div class="ib-row"><b>Solicia</b>Q1 board update, first draft</div>
+    <div class="inboxx2 rv" id="inbx">
+      <div class="ix-top"><i></i><i></i><i></i><span>Inbox</span></div>
+      <div class="ix-tool"><button class="ix-compose" id="ix-compose" type="button">+ Compose</button><span class="ix-hint" id="ix-hint">Click to see it in action</span></div>
+      <div class="ix-body">
+        <div class="ix-view on" id="ix-list">
+          <div class="ixr ixr-new" id="ixr-new"><span class="ixav ixav-s">S</span><div class="ixb"><b>Solicia</b><span id="ixr-new-sub">Working</span></div><span class="ixt" id="ixr-new-t"><i class="ixdot"></i>now</span></div>
+          <div class="ixr"><span class="ixav">MC</span><div class="ixb"><b>Michael Chen</b><span>RE: Due diligence, Tranche B docs</span></div><span class="ixt">9:41 am</span></div>
+          <div class="ixr"><span class="ixav">SW</span><div class="ixb"><b>Sarah Whitfield</b><span>Lease assignment, landlord consent</span></div><span class="ixt">9:23 am<i class="ixdot on"></i></span></div>
+          <div class="ixr"><span class="ixav">DP</span><div class="ixb"><b>David Park</b><span>Share purchase, conditions precedent</span></div><span class="ixt">8:55 am</span></div>
         </div>
-        <div class="ib-pane">
-          <div class="esub">Aurora termination fees</div>
-          <div class="eml dm" id="dm1">
-            <div class="eh"><span class="eav">AR</span><div><b>Alexandra Reeve</b><span>To: paralegal@solicia.ai, 9:41</span></div></div>
-            <p class="eb"><span id="demo-type"></span><span class="cursor" id="demo-cursor"></span></p>
+        <div class="ix-view" id="ix-comp">
+          <div class="ix-card">
+            <div class="ix-fld"><label>To</label><span class="chip2">paralegal@solicia.ai</span></div>
+            <div class="ix-fld"><label>Subject</label><b>Aurora termination fees</b></div>
+            <p class="ix-typebody"><span id="demo-type"></span><span class="cursor" id="demo-cursor" style="background:var(--ink)"></span></p>
+            <span class="ix-send" id="ix-send">Send</span>
           </div>
-          <div class="working dm" id="dmw1"><i></i><i></i><i></i><span id="dmw1t">Reading the agreements</span></div>
-          <div class="eml dm" id="dm2">
-            <div class="eh"><span class="eav eav-s">S</span><div><b>Solicia</b><span>To: Alexandra Reeve, 9:48</span></div></div>
-            <p class="eb">Done. One row per agreement, each figure referenced to the clause it comes from.</p>
-            <div class="attach"><span class="fic fic-doc">DOCX</span><div><b>Aurora_termination_fees.docx</b><span>Sourced and checked</span></div></div>
+        </div>
+        <div class="ix-view" id="ix-thread">
+          <div class="ix-sub">Aurora termination fees</div>
+          <div class="ixm">
+            <div class="eh2"><span class="ixav">AR</span><div><b>Alexandra Reeve</b><span>To: paralegal@solicia.ai, 9:41</span></div></div>
+            <p>Compare termination-fee mechanics across the 12 Aurora agreements.</p>
           </div>
-          <div class="eml dm" id="dm3">
-            <div class="eh"><span class="eav">AR</span><div><b>Alexandra Reeve</b><span>9:52</span></div></div>
-            <p class="eb"><span id="demo-type2"></span><span class="cursor" id="demo-cursor2" style="visibility:hidden"></span></p>
-          </div>
-          <div class="working dm" id="dmw2"><i></i><i></i><i></i><span>Reading the Meridian room</span></div>
-          <div class="eml dm" id="dm4">
-            <div class="eh"><span class="eav eav-s">S</span><div><b>Solicia</b><span>10:03</span></div></div>
-            <p class="eb">Attached. Four fields are marked Silent where the documents say nothing.</p>
-            <div class="attach"><span class="fic fic-xls">XLSX</span><div><b>Meridian_CoC_register.xlsx</b><span>Sourced and checked</span></div></div>
-            <div class="eacts"><span>Reply</span><span>Forward</span></div>
+          <div class="ixm ixm-s">
+            <div class="eh2"><span class="ixav ixav-s">S</span><div><b>Solicia</b><span>To: Alexandra Reeve, 9:48</span></div></div>
+            <p>Done. One row per agreement, each figure referenced to the clause it comes from.</p>
+            <div class="ix-att"><span class="fic fic-doc">DOCX</span><div><b>Aurora_termination_fees.docx</b><span>Sourced and checked</span></div></div>
           </div>
         </div>
       </div>
@@ -2179,72 +2235,62 @@ if(hero && !RM){
 }
 
 /* ---------- inbox demo ---------- */
-var dmEls=["dm1","dmw1","dm2","dm3","dmw2","dm4"].map(function(id){ return $("#"+id); });
+var ixList=$("#ix-list"), ixComp=$("#ix-comp"), ixThread=$("#ix-thread");
 var demoVisible=false, demoRunning=false, demoTok=0;
 var DM1="Compare termination-fee mechanics across the 12 Aurora agreements.";
-var DM3="Perfect. Run the same across the Meridian data room.";
-if(dmEls[0]){
+function ixShow(v){ [ixList,ixComp,ixThread].forEach(function(x){ x.classList.toggle("on", x===v); }); }
+if(ixList){
   var dio=new IntersectionObserver(function(es){
     es.forEach(function(en){ demoVisible=en.isIntersecting; if(demoVisible && !demoRunning) runDemo(); });
   },{threshold:.25});
   dio.observe($("#sec-demo"));
-  var runBtn=$("#ib-run");
-  if(runBtn) runBtn.addEventListener("click", function(){ demoTok++; runDemo(); });
+  $("#ix-compose").addEventListener("click", function(){ demoTok++; runDemo(); });
 }
 function runDemo(){
   demoRunning=true;
   var tok=++demoTok;
-  var t1=$("#demo-type"), t2=$("#demo-type2"), c1=$("#demo-cursor"), c2=$("#demo-cursor2"), w1=$("#dmw1t");
   function dead(){ return !demoVisible || tok!==demoTok; }
   function stop(){ if(tok===demoTok) demoRunning=false; }
-  if(RM){
-    t1.textContent=DM1; t2.textContent=DM3;
-    dmEls.forEach(function(e,i){ if(i!==1 && i!==4) e.classList.add("on"); });
-    c1.style.display="none"; c2.style.display="none"; return;
-  }
-  dmEls.forEach(function(e){ e.classList.remove("on"); });
-  t1.textContent=""; t2.textContent="";
-  c1.style.visibility="visible"; c2.style.visibility="hidden";
-  function typeInto(el,txt,done){
+  var t1=$("#demo-type"), send=$("#ix-send"), nr=$("#ixr-new"), nrs=$("#ixr-new-sub"), nrt=$("#ixr-new-t"), hint=$("#ix-hint");
+  nr.classList.remove("show"); t1.textContent=""; send.classList.remove("pressed");
+  nrt.innerHTML='<i class="ixdot"></i>now';
+  if(RM){ ixShow(ixThread); hint.textContent="The reply, in the same thread"; return; }
+  hint.textContent="Click to see it in action";
+  ixShow(ixList);
+  setTimeout(function(){
+    if(dead()) return stop();
+    hint.textContent="Composing";
+    ixShow(ixComp);
     var i=0;
     (function t(){
       if(dead()) return stop();
-      if(i<txt.length){ el.textContent+=txt[i++]; setTimeout(t,24); }
-      else setTimeout(done,500);
-    })();
-  }
-  setTimeout(function(){
-    if(dead()) return stop();
-    dmEls[0].classList.add("on");
-    typeInto(t1, DM1, function(){
-      c1.style.visibility="hidden";
-      var words=["Reading the agreements","Drafting","Checking citations"], wi=0;
-      dmEls[1].classList.add("on");
-      (function wnext(){
+      if(i<DM1.length){ t1.textContent+=DM1[i++]; setTimeout(t,22); }
+      else setTimeout(function(){
         if(dead()) return stop();
-        if(wi<words.length){ w1.textContent=words[wi++]; setTimeout(wnext,900); }
-        else{
-          dmEls[1].classList.remove("on"); dmEls[2].classList.add("on");
-          setTimeout(function(){
+        send.classList.add("pressed");
+        setTimeout(function(){
+          if(dead()) return stop();
+          hint.textContent="Sent. Solicia is working";
+          ixShow(ixList); nr.classList.add("show"); nrs.textContent="Working";
+          var words=["Reading the agreements","Drafting","Checking citations"], wi=0;
+          (function w(){
             if(dead()) return stop();
-            dmEls[0].classList.remove("on"); dmEls[2].classList.remove("on");
-            setTimeout(function(){
-              if(dead()) return stop();
-              dmEls[3].classList.add("on"); c2.style.visibility="visible";
-              typeInto(t2, DM3, function(){
-                c2.style.visibility="hidden"; dmEls[4].classList.add("on");
-                setTimeout(function(){
-                  if(dead()) return stop();
-                  dmEls[4].classList.remove("on"); dmEls[5].classList.add("on");
-                  setTimeout(function(){ if(dead()) return stop(); runDemo(); },5200);
-                },2200);
-              });
-            },650);
-          },2800);
-        }
-      })();
-    });
-  },80);
+            if(wi<words.length){ nrs.textContent=words[wi++]; setTimeout(w,950); }
+            else{
+              nrs.textContent="Aurora termination fees";
+              nrt.innerHTML='<i class="ixdot on"></i>9:48 am';
+              setTimeout(function(){
+                if(dead()) return stop();
+                hint.textContent="The reply, in the same thread";
+                ixShow(ixThread);
+                setTimeout(function(){ if(dead()) return stop(); runDemo(); },5400);
+              },1500);
+            }
+          })();
+        },650);
+      },700);
+    })();
+  },1600);
 }
 
 /* ---------- terminals / readlog ---------- */
