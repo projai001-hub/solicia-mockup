@@ -910,7 +910,7 @@
   .hal-note{font-size:12.5px;color:var(--ivory-soft);max-width:36ch;line-height:1.6}
 
   /* ---------- light interactive inbox ---------- */
-  .inboxx2{max-width:1280px;margin:0 auto;border-radius:26px;overflow:hidden;color:var(--ink);
+  .inboxx2{max-width:980px;margin:0 auto;border-radius:26px;overflow:hidden;color:var(--ink);
     background:linear-gradient(160deg,rgba(253,253,252,.97),rgba(244,243,239,.94));
     box-shadow:0 50px 110px -34px rgba(0,0,0,.7),inset 0 1.5px 0 #fff}
   .ix-top{display:flex;align-items:center;gap:8px;padding:18px 24px 10px;position:relative}
@@ -924,7 +924,7 @@
   .ix-compose:hover{transform:translateY(-1px)}
   .ix-compose:active{transform:scale(.97)}
   .ix-hint{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mut)}
-  .ix-body{position:relative;height:430px;margin:0 24px 24px}
+  .ix-body{position:relative;height:400px;margin:0 24px 24px}
   .ix-view{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(8px);
     transition:opacity .45s var(--ease),transform .45s var(--ease);display:flex;flex-direction:column;gap:12px}
   .ix-view.on{opacity:1;pointer-events:auto;transform:none}
@@ -1012,6 +1012,98 @@
   .fic-mail{background:linear-gradient(160deg,#9A3550,#571A2A)}
   @media (max-width:1180px){.capgrid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:720px){.capgrid{grid-template-columns:1fr}}
+
+  /* ---------- v5: chat source pill ---------- */
+  .la-srcpill{display:inline-flex;align-self:flex-start;padding:6px 14px;border-radius:999px;background:#E3E3E0;
+    color:#6C6C68;font-size:11.5px;font-weight:560}
+
+  /* ---------- v5: pricing memo ---------- */
+  .memo-t{font-family:var(--display);font-weight:620;font-size:16px;letter-spacing:.12em;text-transform:uppercase;text-align:center;margin:6px 0 2px}
+  .memo-s{font-size:12px;color:var(--ink-soft);text-align:center;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .memo-r{display:grid;grid-template-columns:24px 1fr auto;gap:10px;padding:8px 2px;font-size:12.5px;
+    border-top:1px solid rgba(20,19,16,.05);align-items:baseline}
+  .memo-r>span:first-child{color:var(--ink-mut)}
+
+  /* ---------- v5: bento minis ---------- */
+  .minifx{margin-top:22px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;
+    background:rgba(244,241,235,.1);border:1px solid var(--lined);border-radius:11px;padding:11px 15px;color:var(--ivory)}
+  .mslides{display:flex;gap:9px;margin-top:22px}
+  .mslides i{flex:1;aspect-ratio:16/10;border-radius:9px;background:var(--bg2);border:1px solid var(--line)}
+  .mslides i:first-child{background:linear-gradient(155deg,#7a2940,var(--burg2));border-color:transparent}
+
+  /* ---------- v5: xam artifacts ---------- */
+  .xam-art{transition:opacity .3s var(--ease),transform .3s var(--ease);margin-bottom:20px}
+  .xam-art.sw{opacity:0;transform:translateY(8px)}
+  .xa{background:#fff;border-radius:15px;border:1px solid rgba(20,19,16,.07);
+    box-shadow:0 16px 38px -18px rgba(56,44,32,.3);padding:16px 19px;font-size:12px;color:var(--ink)}
+  .xa-h{display:flex;gap:9px;align-items:center;padding-bottom:10px;border-bottom:1px solid rgba(20,19,16,.07);margin-bottom:6px}
+  .xa-h .fic,.xa .fic{width:26px;height:26px;border-radius:7px;font-size:7px;display:grid;place-items:center;font-weight:700;color:#fff;flex:none}
+  .xa-h b{font-size:12.5px;font-weight:600}
+  .xa-r{display:grid;grid-template-columns:1fr auto;gap:12px;padding:8px 2px;border-top:1px solid rgba(20,19,16,.05);
+    font-size:11.5px;align-items:baseline}
+  .xa-r:first-of-type{border-top:0}
+  .xa-rh span{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mut)}
+  .xa-src{color:var(--burg);font-weight:580;font-size:10.5px;white-space:nowrap}
+  .xa-sil{color:var(--ink-mut);letter-spacing:.04em}
+  .xa-note{margin-top:11px;font-size:10.5px;color:var(--ink-mut)}
+  .xa-fx{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;background:var(--bg2);
+    border-radius:7px;padding:7px 11px;margin-bottom:4px}
+  .xa-lhname{font-family:var(--display);font-weight:620;letter-spacing:.16em;text-align:center;font-size:13.5px;margin-top:4px}
+  .xa-lhsub{text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mut);margin:2px 0 10px}
+  .xa-rule{height:1px;background:rgba(20,19,16,.12);margin-bottom:6px}
+  .xa-dark{background:linear-gradient(160deg,#201B17,#141110);border-color:rgba(255,255,255,.12);color:var(--ivory)}
+  .xa-dark .xa-r{border-top-color:rgba(244,241,235,.08);color:var(--ivory-soft)}
+  .xa-dark .xa-src{color:var(--goldlt)}
+  .xa-cells{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:22px 10px}
+  .xa-cells div{text-align:center;border-left:1px solid rgba(20,19,16,.08)}
+  .xa-cells div:first-child{border-left:0}
+  .xa-cells b{display:block;font-family:var(--display);font-weight:560;font-size:34px;line-height:1}
+  .xa-cells span{display:block;margin-top:6px;font-size:10.5px;color:var(--ink-soft)}
+  .xa-body{font-size:12.5px;line-height:1.8;padding:6px 2px}
+  .xa-del{text-decoration:line-through;text-decoration-color:rgba(110,35,56,.6);color:var(--ink-mut)}
+  .xa-ins{color:var(--burg);border-bottom:1.5px solid rgba(110,35,56,.5)}
+
+  /* ---------- v5: device collage ---------- */
+  .devcol{position:relative;height:520px}
+  .dev{position:absolute;animation:xdrift var(--dur,12s) ease-in-out var(--del,0s) infinite alternate;--amp:12px}
+  .dev .dv-scr{background:#fff;border-radius:12px;overflow:hidden;height:100%}
+  .dev-mac{left:0;top:20px;width:min(430px,78%);height:288px;border-radius:18px;padding:9px;z-index:2}
+  .dv-bar{position:relative;display:flex;gap:5px;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(20,19,16,.07)}
+  .dv-bar i{width:7px;height:7px;border-radius:50%;background:rgba(20,19,16,.12)}
+  .dv-bar em{font-style:normal;position:absolute;left:50%;transform:translateX(-50%);font-size:9px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mut)}
+  .dvr{display:flex;gap:9px;align-items:center;padding:10px 13px;border-bottom:1px solid rgba(20,19,16,.05)}
+  .dva{width:24px;height:24px;border-radius:50%;background:var(--panel);display:grid;place-items:center;
+    font-size:8px;font-weight:640;color:var(--ink-soft);flex:none}
+  .dva-s{background:linear-gradient(160deg,var(--burglt),var(--burg2));color:#fff}
+  .dvr b{display:block;font-size:10.5px;font-weight:600}
+  .dvr div span{display:block;font-size:9.5px;color:var(--ink-mut)}
+  .dev-pad{right:3%;top:0;width:212px;height:276px;border-radius:24px;padding:9px;z-index:1}
+  .dev-pad .dv-scr{padding:14px}
+  .dv-t{display:block;font-size:11px;font-weight:700;text-align:center;padding-bottom:9px;
+    border-bottom:1px solid rgba(20,19,16,.08);margin-bottom:8px}
+  .dv-fld{font-size:9.5px;color:var(--ink-soft);padding:8px 0;border-bottom:1px solid rgba(20,19,16,.05);line-height:1.5}
+  .dv-fld i{font-style:normal;background:rgba(110,35,56,.08);color:var(--burg);border-radius:999px;padding:2px 8px;font-weight:580}
+  .dev-ph{right:13%;bottom:12px;width:152px;height:300px;border-radius:32px;padding:8px;z-index:3}
+  .dev-ph::before{content:"";position:absolute;top:15px;left:50%;transform:translateX(-50%);width:52px;height:15px;
+    border-radius:999px;background:#131110;z-index:4}
+  .dev-ph .dv-scr{border-radius:25px;background:linear-gradient(170deg,#FDFDFC,#F0EFEB)}
+  .dv-time{font-family:var(--display);font-weight:560;font-size:30px;text-align:center;padding:34px 0 14px}
+  .dv-notif{margin:0 9px 8px;background:rgba(255,255,255,.85);border:1px solid rgba(20,19,16,.06);
+    border-radius:11px;padding:8px 10px;font-size:8.5px;color:var(--ink-soft);line-height:1.45;
+    box-shadow:0 6px 16px -8px rgba(56,44,32,.2)}
+  .dv-notif b{display:block;font-size:9px;color:var(--ink);font-weight:640}
+  .dev-watch{left:39%;bottom:0;width:118px;height:142px;border-radius:34px;padding:8px;z-index:4}
+  .dev-watch .dv-scr{background:#141110;border-radius:26px;color:var(--ivory);padding:13px 11px}
+  .dw-time{font-size:15px;font-weight:600;text-align:right;color:var(--goldlt);font-variant-numeric:tabular-nums}
+  .dw-card{margin-top:12px;background:rgba(244,241,235,.1);border-radius:10px;padding:8px 9px;
+    font-size:8px;color:var(--ivory-soft);line-height:1.5}
+  .dw-card b{display:block;font-size:8.5px;color:var(--ivory)}
+  @media (max-width:980px){
+    .devcol{height:430px}
+    .dev-pad{display:none}
+    .dev-mac{width:100%}
+  }
 
   /* mobile nav + responsive */
   .mbtn{display:none;appearance:none;background:none;border:0;cursor:pointer;padding:10px 14px;border-radius:999px}
@@ -1367,54 +1459,34 @@
   <div class="wrap">
     <div class="sechead rv"><h2>The work it takes on.</h2></div>
     <div class="bento">
-      <a class="bc bc-dark rv" data-go="knowledge">
-        <div><h3>Research that goes to the source.</h3>
-        <p class="bmeta">Primary material read in full, however far back the question goes. The memo returns with every authority attached to the sentence it supports.</p></div>
-        <div class="minilog">Aurora_SPA_2019.pdf <i>read in full (214 pp)</i><br>Meridian_disclosure_vol2.pdf <i>read in full (298 pp)</i><br>Authorities_bundle.pdf <i>read in full (146 pp)</i></div>
+      <a class="bc bc-dark rv" data-go="capabilities">
+        <div><h3>Due diligence, to the last page.</h3>
+        <p class="bmeta">Twenty contracts in, a twenty-row summary back. Every field read off the clause it came from, and Silent where the record says nothing.</p></div>
+        <div class="minilog">Aurora_Supply_2019 <i>2.0%, Cl 14.2(b)</i><br>Aurora_Logistics <i>3.5%, Cl 9.1</i><br>Aurora_Fleet <i>Silent, reviewed in full</i></div>
       </a>
-      <a class="bc bc-burg rv" data-go="ecosystem">
-        <div><h3>It works where the firm already works.</h3>
-        <p class="bmeta">Outlook, Datasite, SharePoint and Notion. No portal, no seats, no logins.</p></div>
-        <span class="go">Explore the ecosystem <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <a class="bc bc-burg rv" data-go="capabilities">
+        <div><h3>Financial analysis that comes back working.</h3>
+        <p class="bmeta">Live formulas, referenced inputs. Change a number and the model answers; nothing arrives as a picture of a spreadsheet.</p></div>
+        <div class="minifx">fx&nbsp;&nbsp;=EBITDA*(1+g)/(r-g)</div>
       </a>
-      <a class="bc bc-beige rv" data-go="capabilities">
-        <div><h3>The bundle comes back with its index on top.</h3>
-        <div class="minilog">001_Aurora_SPA_2019.pdf<br>002_Amendment_no2.pdf<br>Disclosure_index.xlsx <i>generated</i></div></div>
-        <span class="go">Indices and bundles <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <a class="bc bc-beige rv" data-go="knowledge" style="grid-column:span 5">
+        <div><h3>Legal research from the primary sources.</h3>
+        <p class="bmeta">Statute and judgment read in the original, however far back the question goes. Every authority attached to the sentence it supports.</p></div>
+        <div class="minilog">Companies Act 2006, s172 <i>in the original</i><br>Meridian JV, [2019] EWHC <i>at [44]</i><br>FCA Handbook, COBS 9 <i>as in force</i></div>
       </a>
-      <a class="bc bc-paper rv" data-go="verification">
-        <div><h3>Every sentence shows its source.</h3>
-        <p class="bmeta">Sources stay attached, formulas stay live, and uncertainty stays visible.</p>
-        <span class="srcchip">Clause 14.2(b), Aurora SPA</span></div>
-        <span class="go">Why it can be checked <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a class="bc bc-panel rv" data-go="capabilities">
-        <div><h3>Five disciplines, one address.</h3>
-        <ul class="reglist">
-          <li><b>Financial analysis</b></li>
-          <li><b>Due diligence</b></li>
-          <li><b>Matter intelligence</b></li>
-          <li><b>Drafting</b></li>
-          <li><b>Board &amp; client work</b></li>
-        </ul></div>
-        <span class="go">The full register <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <a class="bc bc-paper rv" data-go="capabilities" style="grid-column:span 7">
+        <div><h3>Board and client work, ready for the room.</h3>
+        <p class="bmeta">The six-slide update and the client letter, built from the matter file itself and written to be read, not decoded.</p></div>
+        <div class="mslides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       </a>
     </div>
   </div>
 </section>
 
 <section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="sechead rv"><h2>And the rest of the desk.</h2></div>
-    <div class="brgrid rv">
-      <div class="brc lg"><b>Contract markup</b><p>Tracked changes with numbering, cross-references and defined terms left intact.</p></div>
-      <div class="brc lg"><b>Memos, to length</b><p>Three pages of prose or a concise one-pager. The reader decides, not the tool.</p></div>
-      <div class="brc lg"><b>Correspondence</b><p>It drafts the email as well as the attachment, ready for your review and send.</p></div>
-      <div class="brc lg"><b>Bundles and indices</b><p>The zip comes back with its index on top: renamed, ordered and listed.</p></div>
-      <div class="brc lg"><b>Big matters</b><p>Overflow attachments go to a secure bucket, with retention the firm sets.</p></div>
-      <div class="brc lg"><b>Folders, not uploads</b><p>Point it at SharePoint or the data room. It reads in place; nothing is copied out.</p></div>
-    </div>
-    <p class="brfinal rv">Not a feature list. A whole <em>paralegal</em>. New kinds of work arrive, and the same address takes them on.</p>
+  <div class="wrap rv">
+    <p class="brfinal" style="margin-top:0">And the rest of the desk: markup, memos, indices, bundles, correspondence. A whole <em>paralegal</em>, one address.</p>
+    <div style="margin-top:28px"><a class="tlink" data-go="capabilities">The full register of work <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
@@ -1452,19 +1524,43 @@
     <div class="rv">
       <h2>Every step on the record.</h2>
       <ul class="promlist">
-        <li><b>Named people, narrow keys.</b><span>Role-based access, scoped to the matter.</span></li>
-        <li><b>Your matters, not the market's.</b><span>Isolated tenancy. Never trained on, never pooled.</span></li>
-        <li><b>Verified, not promised.</b><span>A controls register you can audit line by line.</span></li>
+        <li><b>Never trained on.</b><span>Client material never trains a model. Contractual, not a policy page.</span></li>
+        <li><b>Access, controlled.</b><span>Named operators and role-based keys, scoped to the matter.</span></li>
+        <li><b>Encrypted throughout.</b><span>In transit and at rest, in an isolated tenancy, on retention the firm sets.</span></li>
       </ul>
       <a class="btn btn-glass" data-go="security">Visit security</a>
     </div>
-    <div class="term lg-dark rv" id="home-term">
-      <div class="tl"><i>09:41:02</i> inbound accepted <em>origin verified</em></div>
-      <div class="tl"><i>09:41:02</i> sender matched <em>named operator</em></div>
-      <div class="tl"><i>09:41:03</i> attachments scanned <em>3 files clean</em></div>
-      <div class="tl"><i>09:41:03</i> matter scoped <em>Aurora</em></div>
-      <div class="tl"><i>09:48:11</i> reply delivered <em>same thread</em></div>
-      <div class="tl"><i>09:48:11</i> record written <em>audit log</em></div>
+    <div class="devcol rv" aria-hidden="true">
+      <div class="dev dev-mac lg" style="--del:-2s">
+        <div class="dv-scr">
+          <div class="dv-bar"><i></i><i></i><i></i><em>Inbox</em></div>
+          <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Aurora termination fees, 9:48</span></div></div>
+          <div class="dvr"><span class="dva">MC</span><div><b>Michael Chen</b><span>RE: Tranche B documents</span></div></div>
+          <div class="dvr"><span class="dva">SW</span><div><b>Sarah Whitfield</b><span>Lease assignment</span></div></div>
+          <div class="dvr"><span class="dva">DP</span><div><b>David Park</b><span>Share purchase</span></div></div>
+        </div>
+      </div>
+      <div class="dev dev-pad lg" style="--del:-6s">
+        <div class="dv-scr">
+          <b class="dv-t">New Message</b>
+          <div class="dv-fld">To: <i>paralegal@solicia.ai</i></div>
+          <div class="dv-fld">Subject: Halcyon bundle</div>
+          <div class="dv-fld" style="border-bottom:0">Compile the signing bundle for Thursday and index it.</div>
+        </div>
+      </div>
+      <div class="dev dev-ph lg" style="--del:-4s">
+        <div class="dv-scr">
+          <div class="dv-time">9:48</div>
+          <div class="dv-notif"><b>Solicia</b>Aurora file returned by reply</div>
+          <div class="dv-notif"><b>Solicia</b>Meridian register, 4 fields Silent</div>
+        </div>
+      </div>
+      <div class="dev dev-watch lg" style="--del:-8s">
+        <div class="dv-scr">
+          <div class="dw-time">9:48</div>
+          <div class="dw-card"><b>Solicia</b>File returned. On the record.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1517,21 +1613,24 @@
       <div class="lens-a">
         <span class="lens-tag">An answer</span>
         <div class="la-chat">
-          <span class="la-q">What are the termination fees across the Aurora agreements?</span>
-          <span class="la-a">Generally, termination fees in agreements of this kind range from around two to four per cent of contract value, although the precise position depends on a number of factors and may vary between counterparties.</span>
-          <span class="la-foot">No sources. No file. Outside the record.</span>
+          <span class="la-q">Summarise the pricing mechanism in the attached.</span>
+          <span class="la-a">The agreement sets a base price which may be adjusted over time. Certain costs appear to be passed through to the buyer, and freight is addressed separately. Volume discounts may also apply in some circumstances.</span>
+          <span class="la-srcpill">Source: Aurora_supply_agreement.pdf</span>
+          <span class="la-foot">One source: the whole file.</span>
         </div>
       </div>
       <div class="lens-b" id="lens-b">
         <span class="lens-tag lens-tag-b">The work</span>
-        <div class="lb-art">
-          <div class="lb-head"><span class="fic fic-xls">XLSX</span><div><b>Aurora_termination_fees.xlsx</b><span>Returned by reply in 7 min</span></div></div>
-          <div class="lb-row lb-rh"><span>Agreement</span><span>Fee</span><span>Source</span></div>
-          <div class="lb-row"><span>Aurora Supply 2019</span><span>2.0%</span><span class="lb-src">Cl 14.2(b)</span></div>
-          <div class="lb-row"><span>Aurora Logistics</span><span>3.5%</span><span class="lb-src">Cl 9.1</span></div>
-          <div class="lb-row"><span>Aurora Services</span><span>4.0%</span><span class="lb-src">Sch 2, s4</span></div>
-          <div class="lb-row"><span>Aurora Fleet</span><span class="lb-sil">Silent</span><span class="lb-src">Reviewed in full</span></div>
-          <div class="lb-foot">Every figure read off the clause. Formulas live.</div>
+        <div class="lb-art memo">
+          <div class="lb-head"><span class="fic fic-doc">DOCX</span><div><b>Pricing_mechanism_memo.docx</b><span>Returned by reply in 9 min</span></div></div>
+          <p class="memo-t">Memorandum</p>
+          <p class="memo-s">Pricing mechanism, Aurora Supply Agreement</p>
+          <div class="memo-r"><span>1.</span><span>Base price, indexed annually to CPI</span><span class="lb-src">Cl 6.1</span></div>
+          <div class="memo-r"><span>2.</span><span>Pass-through costs, raw materials at documented cost</span><span class="lb-src">Cl 6.3(a)</span></div>
+          <div class="memo-r"><span>3.</span><span>Freight, borne by the buyer from origin</span><span class="lb-src">Cl 7.2</span></div>
+          <div class="memo-r"><span>4.</span><span>Volume rebate, 2% above 10,000 units</span><span class="lb-src">Sch 3, s4</span></div>
+          <div class="memo-r"><span>5.</span><span>Currency and quarterly hedging, USD</span><span class="lb-src">Cl 6.5</span></div>
+          <div class="lb-foot">Every element, cited to its clause.</div>
         </div>
       </div>
       <div class="lens-bar" aria-hidden="true"><span class="lens-grip"><svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M4.5 1 1 5l3.5 4M9.5 1 13 5l-3.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
@@ -1546,8 +1645,8 @@
     <div class="xam rv">
       <div class="xam-qs" id="xam-qs"></div>
       <div class="xam-pane lg">
+        <div class="xam-art" id="xam-art"></div>
         <p class="xam-a"><span id="xam-type"></span><span class="cursor" id="xam-cursor"></span></p>
-        <div class="xam-chips" id="xam-chips"></div>
       </div>
     </div>
   </div>
@@ -2525,31 +2624,65 @@ if(lens){
 }
 
 /* ---------- why: cross-examination ---------- */
+function xaDoc(name,rows,note){
+  return "<div class='xa'><div class='xa-h'><span class='fic fic-doc'>DOCX</span><b>"+name+"</b></div>"+rows+
+    (note?"<p class='xa-note'>"+note+"</p>":"")+"</div>";
+}
+function xaXls(name,rows,note){
+  return "<div class='xa'><div class='xa-h'><span class='fic fic-xls'>XLSX</span><b>"+name+"</b></div>"+rows+
+    (note?"<p class='xa-note'>"+note+"</p>":"")+"</div>";
+}
+function xr(a,b){ return "<div class='xa-r'><span>"+a+"</span><span class='xa-src'>"+b+"</span></div>"; }
 var XAM=[
  {q:"Could it build a chronology from 150 emails, with every date carrying its source?",
-  a:"It returns the chronology as a working document, every entry referenced to the message it came from. Review starts from the source, not from trust.",
-  c:["Disclosure_chronology.docx","Every date referenced"]},
+  a:"As a working document, every entry referenced to the message it came from.",
+  art:xaDoc("Disclosure_chronology.docx",
+    xr("14 Mar 2024, first defect complaint","Email 041")+
+    xr("2 Apr 2024, notice of defect served","Email 067")+
+    xr("19 May 2024, replacement refused","Email 112"),
+    "150 emails read. Every date referenced.")},
  {q:"Would the twentieth contract be read as carefully as the first?",
-  a:"Every one, every page. One row per contract, and where an agreement says nothing, the cell says Silent. Nothing is sampled to save time.",
-  c:["20 contracts read","20 rows back","20 minutes"]},
+  a:"Every page of every one. Where an agreement says nothing, the cell says Silent.",
+  art:xaXls("Diligence_summary.xlsx",
+    xr("Aurora Supply 2019, 2.0%","Cl 14.2(b)")+
+    xr("Aurora Logistics, 3.5%","Cl 9.1")+
+    xr("Aurora Fleet, <span class='xa-sil'>Silent</span>","Reviewed in full"),
+    "Row 20 of 20. Nothing sampled.")},
  {q:"Does the model come back with formulas live, or as a picture of one?",
-  a:"Live. Change an input and the workbook recalculates. DOCX with tracked changes, XLSX with working formulas, PPTX ready for the board.",
-  c:["Working files","Never screenshots"]},
+  a:"Live. Change an input and the workbook recalculates.",
+  art:xaXls("Working_model.xlsx",
+    "<div class='xa-fx'>fx&nbsp;&nbsp;=C14*(1+$B$3)^5</div>"+
+    xr("EBITDA multiple, 8.2x","Input, referenced")+
+    xr("Terminal growth, 2.1%","Input, referenced"),
+    "Change a number; the model answers.")},
  {q:"Would it copy your attached example perfectly, or would the letterhead be wrong?",
-  a:"To the letter. It drafts onto the firm's paper: your letterhead, your numbering, your defined terms, your house style.",
-  c:["The firm's document","Not a lookalike"]},
+  a:"To the letter: your letterhead, your numbering, your defined terms.",
+  art:"<div class='xa xa-lh'><p class='xa-lhname'>REEVE &amp; CALLOWAY LLP</p><p class='xa-lhsub'>Solicitors</p><div class='xa-rule'></div>"+
+    xr("1.&nbsp;&nbsp;Definitions and interpretation","House style")+
+    xr("2.&nbsp;&nbsp;Services and term","Your numbering")+
+    "<p class='xa-note'>The firm's document, not a lookalike.</p></div>"},
  {q:"Would it fill in your template, or just build a new table?",
-  a:"It fills in yours. The same file returns completed, with columns, headings and formatting intact.",
-  c:["Your template","Completed"]},
+  a:"It fills in yours, and the same file returns completed.",
+  art:xaXls("Your_template.xlsx",
+    "<div class='xa-r xa-rh'><span>Your columns, your headings</span><span>Kept</span></div>"+
+    xr("Counterparty, Meridian Power JV","Filled")+
+    xr("Change of control, quoted in full","Filled"),
+    "Columns, headings and formatting intact.")},
  {q:"Where does the instruction actually go?",
-  a:"Into an isolated tenancy scoped to your firm. Never trained on, never pooled with other matters, deleted on the schedule you set.",
-  c:["Isolated tenancy","No training","Your retention"]},
+  a:"Into an isolated tenancy. Never trained on, deleted on your schedule.",
+  art:"<div class='xa xa-dark'>"+
+    xr("Isolated tenancy","Scoped to the firm")+
+    xr("Model training","Never")+
+    xr("Retention","Yours to set")+
+    "</div>"},
  {q:"What did the firm have to install?",
-  a:"Nothing. Instructions travel by email, on the record the firm already trusts, audits and archives.",
-  c:["0 new software","0 logins"]},
+  a:"Nothing. If the firm can send email, it is already set up.",
+  art:"<div class='xa xa-cells'><div><b>0</b><span>installs</span></div><div><b>0</b><span>logins</span></div><div><b>1</b><span>email address</span></div></div>"},
  {q:"Who reviews the work?",
-  a:"You do. Solicia does not advise, decide or sign. Every file comes back for review by the lawyer whose name goes on it.",
-  c:["Your review","Your name on it"]}
+  a:"You do. Every file returns for review by the lawyer whose name goes on it.",
+  art:xaDoc("Halcyon_markup.docx",
+    "<p class='xa-body'>The Supplier shall remedy any defect <span class='xa-del'>within 30 days</span> <span class='xa-ins'>within 14 days</span> of notice.</p>",
+    "Tracked changes, ready for your review.")}
 ];
 var xq=$("#xam-qs");
 if(xq){
@@ -2559,27 +2692,27 @@ if(xq){
     xq.appendChild(b);
   });
   var xBtns=$$("button",xq), xIdx=-1, xUser=false, xAuto=null, xTimer=null;
+  var xArt=$("#xam-art");
   function xShow(i){
     if(i===xIdx) return; xIdx=i;
     xBtns.forEach(function(b,j){ b.classList.toggle("on", j===i); });
-    var d=XAM[i], tEl=$("#xam-type"), cEl=$("#xam-chips");
-    cEl.innerHTML="";
-    d.c.forEach(function(c){ var s=document.createElement("i"); s.textContent=c; cEl.appendChild(s); });
+    var d=XAM[i], tEl=$("#xam-type");
     clearTimeout(xTimer);
-    if(RM){ tEl.textContent=d.a; $$("i",cEl).forEach(function(s){ s.classList.add("on"); }); return; }
+    if(RM){ xArt.innerHTML=d.art; tEl.textContent=d.a; return; }
+    xArt.classList.add("sw");
+    setTimeout(function(){ if(xIdx!==i) return; xArt.innerHTML=d.art; xArt.classList.remove("sw"); },260);
     tEl.textContent="";
     var k=0;
     (function tt(){
       if(xIdx!==i) return;
-      if(k<d.a.length){ tEl.textContent+=d.a[k++]; xTimer=setTimeout(tt,13); }
-      else $$("i",cEl).forEach(function(s,si){ setTimeout(function(){ s.classList.add("on"); }, 140+si*90); });
+      if(k<d.a.length){ tEl.textContent+=d.a[k++]; xTimer=setTimeout(tt,14); }
     })();
   }
   var xio=new IntersectionObserver(function(es){
     es.forEach(function(en){
       if(en.isIntersecting && xIdx<0){
         xShow(0);
-        if(!RM) xAuto=setInterval(function(){ if(!xUser) xShow((xIdx+1)%XAM.length); }, 8200);
+        if(!RM) xAuto=setInterval(function(){ if(!xUser) xShow((xIdx+1)%XAM.length); }, 7400);
       }
     });
   },{threshold:.25});
