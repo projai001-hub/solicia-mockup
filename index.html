@@ -1105,6 +1105,51 @@
     .dev-mac{width:100%}
   }
 
+  /* ---------- v6: bento contrast + minis ---------- */
+  .bc-burg .bmeta{color:rgba(244,241,235,.9)}
+  .bc-dark .bmeta{color:rgba(244,241,235,.8)}
+  .minimk{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 17px;
+    font-size:12.5px;line-height:1.7;color:var(--ink-soft)}
+  .bc-panel .mslides i{background:#fff}
+
+  /* ---------- v6: app collage ---------- */
+  .appcol{position:relative;height:470px;max-width:1300px;margin:0 auto}
+  .appwin{position:absolute;border-radius:20px;padding:9px;animation:xdrift var(--dur,13s) ease-in-out var(--del,0s) infinite alternate;--amp:10px}
+  .awin{background:#fff;border-radius:13px;overflow:hidden;height:100%}
+  .aw-main{left:50%;transform:translateX(-50%);top:0;width:min(560px,58%);height:412px;z-index:3}
+  .awl{left:0;top:48px;width:min(390px,32%);height:338px;z-index:2;rotate:-2.5deg}
+  .awr{right:0;top:62px;width:min(390px,32%);height:338px;z-index:2;rotate:2.5deg}
+  .aw-out-top{background:linear-gradient(180deg,#1173C9,#0B62B0);display:flex;align-items:center;padding:10px 12px;position:relative}
+  .aw-newbtn{background:#fff;color:#0F6CBD;font-size:9.5px;font-weight:700;border-radius:6px;padding:5px 11px}
+  .aw-title{position:absolute;left:50%;transform:translateX(-50%);color:#EAF3FB;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase}
+  .aw-tabs{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid rgba(20,19,16,.06)}
+  .aw-tabs span{font-size:9.5px;font-weight:600;color:#8A8886;padding:4px 13px;border-radius:999px}
+  .aw-tabs .on{background:#E8F1FA;color:#0F6CBD}
+  .aw-gm-top{padding:11px 12px 6px}
+  .aw-search{display:block;background:#F1F0EC;border-radius:999px;padding:8px 15px;font-size:9.5px;color:#8A8886}
+  .aw-compose{margin:4px 12px 8px;display:inline-flex;border:1px solid rgba(20,19,16,.12);border-radius:999px;
+    padding:6px 17px;font-size:9.5px;font-weight:600;color:var(--ink-soft);
+    box-shadow:0 3px 10px -4px rgba(56,44,32,.25)}
+  .awt{margin-left:auto;font-size:9px;color:var(--ink-mut);flex:none}
+  @media (max-width:980px){
+    .appcol{height:auto}
+    .appwin{position:static;rotate:none;width:100%;height:auto;margin-bottom:12px}
+    .aw-main{transform:none;width:100%}
+  }
+
+  /* ---------- v6: instruction stream + dark stats ---------- */
+  .instream{overflow:clip;display:flex;flex-direction:column;gap:14px;padding:16px 0 6px}
+  .instream .marq{margin-top:0;gap:12px;animation-duration:52s}
+  .marq-b{animation-duration:60s;animation-direction:reverse}
+  .ipill{display:inline-flex;align-items:center;padding:13px 24px;border-radius:999px;font-size:13.5px;
+    color:var(--ink-soft);white-space:nowrap;font-family:var(--display);font-weight:560;letter-spacing:-.008em}
+  .stats-dark .stat{border-color:var(--lined)}
+  .stats-dark .stat span{color:var(--ivory-mut)}
+
+  /* ---------- v6: control list sync ---------- */
+  #ctrl-list li{cursor:pointer;transition:padding .3s var(--ease),box-shadow .3s}
+  #ctrl-list li.on{padding-left:20px;box-shadow:inset 3px 0 0 var(--burg)}
+
   /* mobile nav + responsive */
   .mbtn{display:none;appearance:none;background:none;border:0;cursor:pointer;padding:10px 14px;border-radius:999px}
   .mbtn svg{display:block}
@@ -1463,21 +1508,31 @@
         <div><h3>Due diligence, to the last page.</h3>
         <p class="bmeta">Twenty contracts in, a twenty-row summary back. Every field read off the clause it came from, and Silent where the record says nothing.</p></div>
         <div class="minilog">Aurora_Supply_2019 <i>2.0%, Cl 14.2(b)</i><br>Aurora_Logistics <i>3.5%, Cl 9.1</i><br>Aurora_Fleet <i>Silent, reviewed in full</i></div>
+        <span class="go">See a diligence run <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
       <a class="bc bc-burg rv" data-go="capabilities">
         <div><h3>Financial analysis that comes back working.</h3>
         <p class="bmeta">Live formulas, referenced inputs. Change a number and the model answers; nothing arrives as a picture of a spreadsheet.</p></div>
         <div class="minifx">fx&nbsp;&nbsp;=EBITDA*(1+g)/(r-g)</div>
+        <span class="go">See a working model <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-      <a class="bc bc-beige rv" data-go="knowledge" style="grid-column:span 5">
+      <a class="bc bc-beige rv" data-go="knowledge">
         <div><h3>Legal research from the primary sources.</h3>
-        <p class="bmeta">Statute and judgment read in the original, however far back the question goes. Every authority attached to the sentence it supports.</p></div>
-        <div class="minilog">Companies Act 2006, s172 <i>in the original</i><br>Meridian JV, [2019] EWHC <i>at [44]</i><br>FCA Handbook, COBS 9 <i>as in force</i></div>
+        <p class="bmeta">Statute and judgment read in the original, every authority attached to its sentence.</p>
+        <div class="minilog">Companies Act 2006, s172 <i>in the original</i><br>Meridian JV, [2019] EWHC <i>at [44]</i></div></div>
+        <span class="go">See the sources <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-      <a class="bc bc-paper rv" data-go="capabilities" style="grid-column:span 7">
+      <a class="bc bc-paper rv" data-go="capabilities">
+        <div><h3>Markup that breaks nothing.</h3>
+        <p class="bmeta">Tracked changes with numbering, cross-references and defined terms intact.</p>
+        <div class="minimk">remedy any defect <span class="xa-del">within 30 days</span> <span class="xa-ins">within 14 days</span> of notice</div></div>
+        <span class="go">See a markup <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="bc bc-panel rv" data-go="capabilities">
         <div><h3>Board and client work, ready for the room.</h3>
-        <p class="bmeta">The six-slide update and the client letter, built from the matter file itself and written to be read, not decoded.</p></div>
-        <div class="mslides" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <p class="bmeta">The six-slide update and the client letter, built from the matter file.</p>
+        <div class="mslides" aria-hidden="true"><i></i><i></i><i></i></div></div>
+        <span class="go">See a board pack <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
     </div>
   </div>
@@ -1486,7 +1541,7 @@
 <section class="sec" style="padding-top:0">
   <div class="wrap rv">
     <p class="brfinal" style="margin-top:0">And the rest of the desk: markup, memos, indices, bundles, correspondence. A whole <em>paralegal</em>, one address.</p>
-    <div style="margin-top:28px"><a class="tlink" data-go="capabilities">The full register of work <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div style="margin-top:28px"><a class="tlink" data-go="capabilities">Everything it takes on <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
@@ -1519,49 +1574,48 @@
   </div>
 </section>
 
+<section class="sec" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sechead center rv" style="margin-bottom:clamp(30px,3vw,50px)"><h2>Work with Solicia, anywhere.</h2>
+    <p class="lede" style="max-width:40ch;margin:16px auto 0">Outlook, Apple Mail, Gmail. If it sends email, it briefs Solicia.</p></div>
+    <div class="appcol rv" aria-hidden="true">
+      <div class="appwin awl lg" style="--del:-3s"><div class="awin">
+        <div class="aw-out-top"><span class="aw-newbtn">New Email</span><span class="aw-title">Outlook</span></div>
+        <div class="aw-tabs"><span class="on">Focused</span><span>Other</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Meridian register, 9:12</span></div></div>
+        <div class="dvr"><span class="dva">MC</span><div><b>Michael Chen</b><span>RE: Tranche B documents</span></div></div>
+        <div class="dvr"><span class="dva">SW</span><div><b>Sarah Whitfield</b><span>Lease assignment</span></div></div>
+      </div></div>
+      <div class="appwin aw-main lg" style="--del:-6s"><div class="awin">
+        <div class="dv-bar"><i></i><i></i><i></i><em>Apple Mail</em></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Aurora termination fees</span></div><span class="awt">9:48</span></div>
+        <div class="dvr"><span class="dva">AR</span><div><b>Alexandra Reeve</b><span>Halcyon signing bundle</span></div><span class="awt">8:55</span></div>
+        <div class="dvr"><span class="dva">DP</span><div><b>David Park</b><span>Share purchase</span></div><span class="awt">8:31</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Q1 board update, first draft</span></div><span class="awt">Mon</span></div>
+      </div></div>
+      <div class="appwin awr lg" style="--del:-9s"><div class="awin">
+        <div class="aw-gm-top"><span class="aw-search">Search mail</span></div>
+        <span class="aw-compose">Compose</span>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Disclosure bundle, indexed</span></div></div>
+        <div class="dvr"><span class="dva">JW</span><div><b>James Wu</b><span>Counsel briefing note</span></div></div>
+        <div class="dvr"><span class="dva">EH</span><div><b>Elena Haddad</b><span>Completion agenda</span></div></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
 <section class="sec">
   <div class="wrap split">
     <div class="rv">
       <h2>Every step on the record.</h2>
-      <ul class="promlist">
+      <ul class="promlist" id="ctrl-list">
         <li><b>Never trained on.</b><span>Client material never trains a model. Contractual, not a policy page.</span></li>
         <li><b>Access, controlled.</b><span>Named operators and role-based keys, scoped to the matter.</span></li>
         <li><b>Encrypted throughout.</b><span>In transit and at rest, in an isolated tenancy, on retention the firm sets.</span></li>
       </ul>
       <a class="btn btn-glass" data-go="security">Visit security</a>
     </div>
-    <div class="devcol rv" aria-hidden="true">
-      <div class="dev dev-mac lg" style="--del:-2s">
-        <div class="dv-scr">
-          <div class="dv-bar"><i></i><i></i><i></i><em>Inbox</em></div>
-          <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Aurora termination fees, 9:48</span></div></div>
-          <div class="dvr"><span class="dva">MC</span><div><b>Michael Chen</b><span>RE: Tranche B documents</span></div></div>
-          <div class="dvr"><span class="dva">SW</span><div><b>Sarah Whitfield</b><span>Lease assignment</span></div></div>
-          <div class="dvr"><span class="dva">DP</span><div><b>David Park</b><span>Share purchase</span></div></div>
-        </div>
-      </div>
-      <div class="dev dev-pad lg" style="--del:-6s">
-        <div class="dv-scr">
-          <b class="dv-t">New Message</b>
-          <div class="dv-fld">To: <i>paralegal@solicia.ai</i></div>
-          <div class="dv-fld">Subject: Halcyon bundle</div>
-          <div class="dv-fld" style="border-bottom:0">Compile the signing bundle for Thursday and index it.</div>
-        </div>
-      </div>
-      <div class="dev dev-ph lg" style="--del:-4s">
-        <div class="dv-scr">
-          <div class="dv-time">9:48</div>
-          <div class="dv-notif"><b>Solicia</b>Aurora file returned by reply</div>
-          <div class="dv-notif"><b>Solicia</b>Meridian register, 4 fields Silent</div>
-        </div>
-      </div>
-      <div class="dev dev-watch lg" style="--del:-8s">
-        <div class="dv-scr">
-          <div class="dw-time">9:48</div>
-          <div class="dw-card"><b>Solicia</b>File returned. On the record.</div>
-        </div>
-      </div>
-    </div>
+    <div class="rv"><div class="xam-art" id="ctrl-art" style="margin-bottom:0"></div></div>
   </div>
 </section>
 
@@ -1746,35 +1800,28 @@
   </div>
 </section>
 
-<section class="sec" style="padding-top:0">
+<section class="sec" style="padding-top:0;padding-bottom:0">
   <div class="wrap">
-    <div class="sechead rv"><h2>The register.</h2>
-    <p class="lede">Everything on it returns as a working file. Filter by discipline; the scope beyond is configured firm by firm.</p></div>
-    <div class="capfilters rv">
-      <button class="cf on" type="button" data-cat="all">All work</button>
-      <button class="cf" type="button" data-cat="dil">Due diligence</button>
-      <button class="cf" type="button" data-cat="mat">Matter intelligence</button>
-      <button class="cf" type="button" data-cat="dra">Drafting</button>
-      <button class="cf" type="button" data-cat="res">Research</button>
-      <button class="cf" type="button" data-cat="ana">Analysis</button>
-      <button class="cf" type="button" data-cat="brd">Board &amp; client</button>
+    <div class="sechead rv"><h2>No menu. No modules. No ceiling.</h2>
+    <p class="lede">Feature lists describe software. Solicia works the way a trained mind does: give it the material and the instruction, and it does the work. Anything that can be asked by email can be asked of it.</p></div>
+  </div>
+  <div class="instream rv" aria-hidden="true">
+    <div class="marq marq-a"><span class="ipill lg">Build the chronology from the disclosure bundle</span><span class="ipill lg">Mark up the SPA against our template</span><span class="ipill lg">Summarise 15 items across 50 contracts</span><span class="ipill lg">Draft the completion checklist</span><span class="ipill lg">Index the data room and send the zip</span><span class="ipill lg">Compare the leases for break rights</span><span class="ipill lg">Build the chronology from the disclosure bundle</span><span class="ipill lg">Mark up the SPA against our template</span><span class="ipill lg">Summarise 15 items across 50 contracts</span><span class="ipill lg">Draft the completion checklist</span><span class="ipill lg">Index the data room and send the zip</span><span class="ipill lg">Compare the leases for break rights</span></div>
+    <div class="marq marq-b"><span class="ipill lg">Draft the board update</span><span class="ipill lg">Reconcile the fee ledger</span><span class="ipill lg">Find every change-of-control clause</span><span class="ipill lg">Write the client letter</span><span class="ipill lg">Build the valuation model</span><span class="ipill lg">Diary the compliance dates</span><span class="ipill lg">Draft the board update</span><span class="ipill lg">Reconcile the fee ledger</span><span class="ipill lg">Find every change-of-control clause</span><span class="ipill lg">Write the client letter</span><span class="ipill lg">Build the valuation model</span><span class="ipill lg">Diary the compliance dates</span></div>
+  </div>
+</section>
+
+<section class="sec sec-dark" style="margin-top:clamp(80px,8vw,120px)">
+  <div class="wrap">
+    <div class="sechead rv"><h2>The arithmetic of one morning.</h2>
+    <p class="lede">Fifty contracts arrived at nine. The summaries were back before half past.</p></div>
+    <div class="stats stats-dark rv">
+      <div class="stat"><b data-cnt="50">0</b><span>contracts, read in full</span></div>
+      <div class="stat"><b data-cnt="15">0</b><span>items summarised, per contract</span></div>
+      <div class="stat"><b data-cnt="750">0</b><span>entries, each read off the clause</span></div>
+      <div class="stat"><b data-cnt="20">0</b><span>minutes, send to reply</span></div>
     </div>
-    <div class="capgrid rv" id="capgrid">
-      <div class="capc lg" data-cat="dil"><span class="fic fic-xls">XLSX</span><b>Twenty-contract summaries</b><p>One row per contract, every field off the clause, Silent where it says nothing.</p></div>
-      <div class="capc lg" data-cat="dil"><span class="fic fic-xls">XLSX</span><b>Change-of-control registers</b><p>Every clause found, quoted and referenced across the room.</p></div>
-      <div class="capc lg" data-cat="dil"><span class="fic fic-zip">ROOM</span><b>Data-room review</b><p>Reads the room in place; nothing is copied out of it.</p></div>
-      <div class="capc lg" data-cat="mat"><span class="fic fic-doc">DOCX</span><b>Chronologies</b><p>Built from the whole file, dated and attributed line by line.</p></div>
-      <div class="capc lg" data-cat="mat"><span class="fic fic-zip">ZIP</span><b>Indices &amp; bundles</b><p>Renamed, ordered and listed. The zip returns with its index on top.</p></div>
-      <div class="capc lg" data-cat="mat"><span class="fic fic-xls">XLSX</span><b>Disclosure registers</b><p>Assembled from the bundle, referenced to the exhibit.</p></div>
-      <div class="capc lg" data-cat="dra"><span class="fic fic-doc">DOCX</span><b>First drafts, on your letterhead</b><p>Your numbering, your defined terms, your house style.</p></div>
-      <div class="capc lg" data-cat="dra"><span class="fic fic-doc">DOCX</span><b>Contract markup, intact</b><p>Tracked changes with numbering and cross-references preserved.</p></div>
-      <div class="capc lg" data-cat="dra"><span class="fic fic-mail">MAIL</span><b>Correspondence</b><p>It drafts the email as well as the attachment, ready for review.</p></div>
-      <div class="capc lg" data-cat="res"><span class="fic fic-doc">DOCX</span><b>Sourced research memos</b><p>Three pages or a one-pager, every authority attached.</p></div>
-      <div class="capc lg" data-cat="res"><span class="fic fic-pdf">PDF</span><b>Authorities, read in full</b><p>Primary material, however far back the question goes.</p></div>
-      <div class="capc lg" data-cat="ana"><span class="fic fic-xls">XLSX</span><b>Valuation &amp; fee models</b><p>Working spreadsheets with live formulas and referenced inputs.</p></div>
-      <div class="capc lg" data-cat="brd"><span class="fic fic-ppt">PPTX</span><b>Board decks</b><p>Six slides from the matter file, board ready.</p></div>
-      <div class="capc lg" data-cat="brd"><span class="fic fic-doc">DOCX</span><b>Client updates, to length</b><p>Written to the reader, in the firm's voice.</p></div>
-    </div>
+    <p class="lede rv" style="margin-top:clamp(36px,4vw,54px);max-width:54ch">Tailored to the instruction, accurate to the clause, and Silent where the record says nothing. The reading of a week, returned inside the morning.</p>
   </div>
 </section>
 
@@ -2787,6 +2834,44 @@ if(dled){
       else setTimeout(function(){ dVis ? drun() : dRun=false; }, 5200);
     })();
   }
+}
+
+/* ---------- product control artifacts ---------- */
+var ctrlList=$("#ctrl-list");
+if(ctrlList){
+  var CTRLA=[
+    "<div class='xa'><div class='xa-h'><span class='fic fic-doc'>DOCX</span><b>Data_processing_agreement.docx</b></div>"+
+      xr("No training on client material","Cl 9.2")+xr("Survives termination","Cl 9.6")+xr("Audit rights, the firm's","Cl 11.1")+
+      "<p class='xa-note'>Signed before the first instruction.</p></div>",
+    "<div class='xa'><div class='xa-h'><b>The access register</b></div>"+
+      xr("Alexandra Reeve","Operator, Aurora")+xr("Firm admin","Admin, all matters")+xr("Anyone else","No key")+
+      "<p class='xa-note'>Named people, narrow keys, every use logged.</p></div>",
+    "<div class='xa'><div class='xa-h'><b>The locks</b></div>"+
+      xr("In transit","TLS 1.3")+xr("At rest","AES-256")+xr("Tenancy","Isolated, per firm")+xr("Retention","Set by the firm")+
+      "<p class='xa-note'>Verified against the controls register, not promised.</p></div>"
+  ];
+  var cls2=$$("li",ctrlList), cArt=$("#ctrl-art"), cIdx=-1, cAuto=null, cUser=false;
+  function cShow(i){
+    if(i===cIdx) return; cIdx=i;
+    cls2.forEach(function(l,j){ l.classList.toggle("on", j===i); });
+    if(RM){ cArt.innerHTML=CTRLA[i]; return; }
+    cArt.classList.add("sw");
+    setTimeout(function(){ if(cIdx!==i) return; cArt.innerHTML=CTRLA[i]; cArt.classList.remove("sw"); },240);
+  }
+  cls2.forEach(function(l,i){
+    ["mouseenter","click"].forEach(function(ev){
+      l.addEventListener(ev, function(){ cUser=true; if(cAuto) clearInterval(cAuto); cShow(i); });
+    });
+  });
+  var ctio=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(en.isIntersecting && cIdx<0){
+        cShow(0);
+        if(!RM) cAuto=setInterval(function(){ if(!cUser) cShow((cIdx+1)%CTRLA.length); },4600);
+      }
+    });
+  },{threshold:.3});
+  ctio.observe(ctrlList);
 }
 
 /* ---------- why: scroll-lit reasons ---------- */
