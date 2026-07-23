@@ -16,7 +16,7 @@
     --ink:#141310; --ink-soft:rgba(20,19,16,.62); --ink-mut:rgba(20,19,16,.42);
     --ivory:#F4F1EB; --ivory-soft:rgba(244,241,235,.66); --ivory-mut:rgba(244,241,235,.4);
     --burg:#6E2338; --burg2:#571A2A; --burglt:#9A3550;
-    --gold:#C08A4E;
+    --gold:#C08A4E; --goldlt:#E2B87E;
     --dark:#141110; --dark2:#1B1714;
     --line:rgba(20,19,16,.09); --lined:rgba(244,241,235,.14);
     --shadow-card:0 30px 70px -30px rgba(56,44,32,.35), inset 0 1.5px 0 rgba(255,255,255,.75);
@@ -924,7 +924,7 @@
   .ix-compose:hover{transform:translateY(-1px)}
   .ix-compose:active{transform:scale(.97)}
   .ix-hint{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mut)}
-  .ix-body{position:relative;height:400px;margin:0 24px 24px}
+  .ix-body{position:relative;height:444px;margin:0 24px 24px}
   .ix-view{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(8px);
     transition:opacity .45s var(--ease),transform .45s var(--ease);display:flex;flex-direction:column;gap:12px}
   .ix-view.on{opacity:1;pointer-events:auto;transform:none}
@@ -1117,8 +1117,9 @@
   .appwin{position:absolute;border-radius:20px;padding:9px;animation:xdrift var(--dur,13s) ease-in-out var(--del,0s) infinite alternate;--amp:10px}
   .awin{background:#fff;border-radius:13px;overflow:hidden;height:100%}
   .aw-main{left:50%;transform:translateX(-50%);top:0;width:min(560px,58%);height:412px;z-index:3}
-  .awl{left:0;top:48px;width:min(390px,32%);height:338px;z-index:2;rotate:-2.5deg}
-  .awr{right:0;top:62px;width:min(390px,32%);height:338px;z-index:2;rotate:2.5deg}
+  .awl{left:0;top:44px;width:min(400px,33%);height:352px;z-index:2}
+  .awr{right:0;top:58px;width:min(400px,33%);height:352px;z-index:2}
+  .awl .awin,.awr .awin{box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
   .aw-out-top{background:linear-gradient(180deg,#1173C9,#0B62B0);display:flex;align-items:center;padding:10px 12px;position:relative}
   .aw-newbtn{background:#fff;color:#0F6CBD;font-size:9.5px;font-weight:700;border-radius:6px;padding:5px 11px}
   .aw-title{position:absolute;left:50%;transform:translateX(-50%);color:#EAF3FB;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase}
@@ -1149,6 +1150,130 @@
   /* ---------- v6: control list sync ---------- */
   #ctrl-list li{cursor:pointer;transition:padding .3s var(--ease),box-shadow .3s}
   #ctrl-list li.on{padding-left:20px;box-shadow:inset 3px 0 0 var(--burg)}
+
+  /* ---------- v7: realistic file mocks ---------- */
+  .wm{background:#fff;border-radius:14px;overflow:hidden;text-align:left;color:#26241F;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    box-shadow:0 26px 60px -24px rgba(40,30,22,.42),0 0 0 1px rgba(20,19,16,.07)}
+  .wm-bar{position:relative;display:flex;align-items:center;gap:6px;padding:10px 13px;background:#F7F6F3;border-bottom:1px solid #E8E6E1}
+  .wm-bar i{width:8px;height:8px;border-radius:50%;background:rgba(20,19,16,.13);font-style:normal}
+  .wm-name{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:7px;
+    font-size:10.5px;font-weight:600;color:#7A776F;white-space:nowrap}
+  .wm-name .fic{width:17px;height:17px;border-radius:4px;font-size:4.5px;display:grid;place-items:center;font-weight:700;color:#fff}
+  .wm-cut{-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 97%);mask-image:linear-gradient(180deg,#000 62%,transparent 97%)}
+  .wm-cutr{-webkit-mask-image:linear-gradient(90deg,#000 76%,transparent 99%);mask-image:linear-gradient(90deg,#000 76%,transparent 99%)}
+  .docpage{padding:18px 22px 6px;line-height:1.5}
+  .doc-h{font-size:13px;font-weight:700;letter-spacing:-.005em;color:#1F1E1B}
+  .doc-sub{font-size:9.5px;color:#8A8880;margin:3px 0 12px}
+  .doctbl{width:100%;border-collapse:collapse;font-size:9.6px;table-layout:fixed}
+  .doctbl th{background:#F1F0EB;font-weight:700;text-align:left;padding:6px 8px;border:1px solid #D5D3CC;font-size:8.8px;letter-spacing:.02em;color:#3B3A35}
+  .doctbl td{border:1px solid #DEDCD6;padding:6px 8px;vertical-align:top;color:#3B3A35}
+  .doctbl .dt-ref{text-align:center;font-weight:600;color:#26241F}
+  .xlm{font-variant-numeric:tabular-nums}
+  .xl-fx{display:flex;align-items:center;gap:9px;padding:6px 11px;border-bottom:1px solid #E2E0DA;background:#FBFAF8;
+    font-size:9px;color:#7A776F;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .xl-fx b{font-weight:600;color:#26241F;border:1px solid #E2E0DA;border-radius:3px;padding:1px 7px;background:#fff}
+  .xl-grid{display:grid;font-size:9.4px}
+  .xl-grid span{padding:5px 7px;border-right:1px solid #E4E2DC;border-bottom:1px solid #E4E2DC;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .xl-cl{background:#F3F2EE;color:#8A877F;text-align:center;font-weight:600;font-size:8.8px}
+  .xl-hd{background:#EDF3EE;font-weight:700;color:#1E5B38}
+  .xl-lab{font-weight:600;background:#FAF9F6;color:#26241F}
+  .xl-sil{color:#98958D;letter-spacing:.04em}
+  .xl-src{color:#6E2338;font-weight:600}
+  .stylem{display:flex;overflow:hidden}
+  .stylem .sm-bar{width:7px;flex:none;background:linear-gradient(180deg,#2C5FA8,#7A3FA0 55%,#B0387A)}
+  .sm-page{flex:1;padding:15px 18px 4px;min-width:0}
+  .sm-logo{text-align:right;font-weight:800;font-size:9.5px;letter-spacing:.14em;color:#2C5FA8}
+  .sm-title{font-size:15px;font-weight:700;color:#2C5FA8;margin-top:7px}
+  .sm-it{font-style:italic;font-size:8.8px;color:#8A8880;margin:2px 0 9px}
+  .sm-h{font-size:9.6px;font-weight:700;color:#2C5FA8;margin:9px 0 3px}
+  .sm-p{font-size:8.8px;color:#4A4944;line-height:1.55}
+  .xa-match{display:flex;align-items:center;gap:8px;margin-bottom:9px;font-size:10.5px;color:var(--ink-soft)}
+  .xa-match .fic{width:22px;height:22px;border-radius:6px;font-size:6px;display:grid;place-items:center;font-weight:700;color:#fff;flex:none}
+  .xa-match em{font-style:normal;color:var(--burg);font-weight:580}
+
+  /* ---------- v7: aurora + glass polish ---------- */
+  .aur{position:absolute;inset:0;overflow:clip;pointer-events:none}
+  .aur i{position:absolute;border-radius:50%;filter:blur(72px);font-style:normal;
+    animation:aurdrift var(--dur,26s) ease-in-out var(--del,0s) infinite alternate}
+  @keyframes aurdrift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(var(--dx,60px),var(--dy,-40px),0) scale(var(--ds,1.16))}}
+  .phero{position:relative}
+  .phero .wrap{position:relative;z-index:2}
+  .art{overflow:hidden}
+  .art::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
+    background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.5) 46%,transparent 58%);
+    transform:translateX(-130%)}
+  .art[data-pos="0"]::after{opacity:1;animation:sheen 6.5s ease-in-out infinite}
+  @keyframes sheen{0%,58%{transform:translateX(-130%)}82%,100%{transform:translateX(130%)}}
+  .prom{background:linear-gradient(135deg,rgba(255,255,255,.66),rgba(255,255,255,.3)),rgba(252,252,250,.5);
+    -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+    border:1px solid rgba(255,255,255,.62);outline:1px solid rgba(20,19,16,.06);outline-offset:-2px;
+    box-shadow:inset 0 1.5px 0 rgba(255,255,255,.85),0 22px 50px -26px rgba(56,44,32,.32);
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .prom:hover{transform:translateY(-3px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.85),0 30px 60px -26px rgba(56,44,32,.4)}
+
+  /* ---------- v7: capabilities morning showpiece ---------- */
+  .morning{position:relative;overflow:clip}
+  .morning .wrap{position:relative;z-index:2}
+  .mgrid{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(28px,4vw,70px);align-items:center}
+  .me-head{padding:12px 18px 0;font-size:11px}
+  .me-fld{display:flex;gap:9px;padding:7px 0;border-bottom:1px solid #F0EEEA;color:#8A8880}
+  .me-fld b{color:#26241F;font-weight:600}
+  .me-fld .chip{background:rgba(110,35,56,.08);color:#6E2338;border-radius:999px;padding:2px 10px;font-weight:600;font-size:10.5px}
+  .me-att{display:inline-flex;align-items:center;gap:8px;margin:10px 0 2px;padding:7px 12px 7px 8px;border-radius:8px;
+    border:1px solid #E4E2DC;background:#FAF9F6;font-size:10px;color:#3B3A35}
+  .me-att .fic{width:24px;height:24px;border-radius:6px;font-size:6.5px;display:grid;place-items:center;font-weight:700;color:#fff}
+  .me-att b{display:block;font-size:10.5px}
+  .me-att span{color:#8A8880;font-size:9.5px}
+  .me-body{padding:10px 18px 2px;font-size:10.8px;line-height:1.6;color:#3B3A35}
+  .me-body ul{margin:7px 0 0;padding-left:15px;columns:2;column-gap:22px}
+  .me-body li{margin:1px 0;font-size:10.2px;break-inside:avoid}
+  .mread{position:relative;border-radius:26px;padding:clamp(22px,2.4vw,34px)}
+  .mstatus{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:18px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--ivory-soft)}
+  .mstatus i{font-style:normal;color:var(--gold)}
+  .mstatus em{font-style:normal;color:var(--ivory-mut);font-size:11px}
+  .swarm{display:grid;grid-template-columns:repeat(10,1fr);gap:7px}
+  .swarm i{aspect-ratio:3/4;border-radius:4px;font-style:normal;position:relative;
+    border:1px solid rgba(244,241,235,.13);background:rgba(244,241,235,.045);
+    transition:background .5s,border-color .5s,box-shadow .5s}
+  .swarm i::before{content:"";position:absolute;left:18%;right:18%;top:26%;height:1px;background:rgba(244,241,235,.2);
+    box-shadow:0 4px 0 rgba(244,241,235,.14),0 8px 0 rgba(244,241,235,.14)}
+  .swarm i.rd{background:rgba(192,138,78,.26);border-color:rgba(226,184,126,.7);box-shadow:0 0 16px rgba(192,138,78,.45)}
+  .swarm i.dn{background:rgba(154,53,80,.24);border-color:rgba(154,53,80,.5);box-shadow:none}
+  .mret{position:absolute;left:clamp(14px,1.8vw,26px);right:clamp(14px,1.8vw,26px);bottom:clamp(14px,1.8vw,26px);
+    opacity:0;transform:translateY(18px) scale(.985);transition:opacity .7s var(--ease),transform .7s var(--ease);z-index:3}
+  .mret.in{opacity:1;transform:none}
+  .mfoot{margin-top:16px;font-size:12px;color:var(--ivory-mut);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .mfoot b{color:var(--goldlt);font-weight:560}
+  @media (max-width:980px){
+    .mgrid{grid-template-columns:1fr}
+    .me-body ul{columns:1}
+  }
+
+  /* ---------- v7: manual inbox demo ---------- */
+  .ix-chips{display:flex;gap:8px;padding:12px 2px 2px;flex-wrap:wrap}
+  .ixc{appearance:none;border:1px solid rgba(20,19,16,.13);background:#fff;border-radius:999px;padding:7px 15px;
+    font-family:var(--sans);font-size:12.5px;font-weight:560;color:var(--ink-soft);cursor:pointer;transition:all .2s}
+  .ixc:hover{border-color:rgba(110,35,56,.3)}
+  .ixc.on{background:rgba(110,35,56,.08);border-color:rgba(110,35,56,.35);color:var(--burg)}
+  .ix-send{appearance:none;border:0;font-family:var(--sans)}
+  .pulse{animation:pulsebtn 1.7s ease-in-out infinite}
+  @keyframes pulsebtn{
+    0%,100%{box-shadow:0 12px 26px -12px rgba(110,35,56,.7),inset 0 1.5px 0 rgba(255,255,255,.3),0 0 0 0 rgba(154,53,80,.4)}
+    50%{box-shadow:0 12px 26px -12px rgba(110,35,56,.7),inset 0 1.5px 0 rgba(255,255,255,.3),0 0 0 10px rgba(154,53,80,0)}}
+  .ix-subrow{display:flex;justify-content:space-between;align-items:baseline}
+  .ix-back{cursor:pointer;color:var(--ink-mut);font-size:12.5px;font-weight:560;transition:color .2s}
+  .ix-back:hover{color:var(--ink)}
+  .ix-del{color:var(--ink-mut);font-size:12px}
+  .ix-again{align-self:flex-start;margin-top:2px}
+
+  /* ---------- v7: product rest-of-desk band ---------- */
+  .brband{border-radius:26px;padding:clamp(22px,2.6vw,38px) clamp(24px,3vw,46px);
+    display:flex;align-items:center;justify-content:space-between;gap:clamp(18px,3vw,44px);flex-wrap:wrap}
+  .brband .brfinal{margin:0;font-size:clamp(19px,1.75vw,29px);max-width:36ch}
+  .brband .btn{flex:none}
 
   /* mobile nav + responsive */
   .mbtn{display:none;appearance:none;background:none;border:0;cursor:pointer;padding:10px 14px;border-radius:999px}
@@ -1221,7 +1346,7 @@
           <a class="ndi" data-go="capabilities"><b>Overview</b><span>The register of work Solicia takes on, and the files it returns.</span></a>
           <a class="ndi" data-go="ecosystem"><b>Ecosystem</b><span>The inbox, the data rooms and the knowledge stores it already works inside.</span></a>
           <a class="ndi" data-go="knowledge"><b>Knowledge</b><span>How it reads the primary material, in full, at any depth.</span></a>
-          <a class="ndi" data-go="verification"><b>Verification</b><span>Why every file comes back checkable, with its sources attached.</span></a>
+          <a class="ndi" data-go="verification"><b>Verification</b><span>Why you can stop checking its work: nothing invented, every line sourced.</span></a>
         </div>
         <a class="ndf" data-go="capabilities">
           <i>Featured</i>
@@ -1455,38 +1580,42 @@
 <section class="sec sec-dark" id="sec-demo">
   <div class="wrap">
     <div class="sechead center rv">
-      <h2>Watch a matter come back.</h2>
-      <p class="lede" style="max-width:44ch;margin-left:auto;margin-right:auto">One address. The instruction goes out, and the finished file returns to the same thread.</p>
+      <h2>One email. <em>We handle the rest.</em></h2>
+      <p class="lede" style="max-width:46ch;margin-left:auto;margin-right:auto">Press compose, pick an instruction, hit send — and watch the reply land. This is the whole product.</p>
     </div>
     <div class="inboxx2 rv" id="inbx">
       <div class="ix-top"><i></i><i></i><i></i><span>Inbox</span></div>
-      <div class="ix-tool"><button class="ix-compose" id="ix-compose" type="button">+ Compose</button><span class="ix-hint" id="ix-hint">Click to see it in action</span></div>
+      <div class="ix-tool"><button class="ix-compose pulse" id="ix-compose" type="button">+ Compose</button><span class="ix-hint" id="ix-hint">← Click to see it in action</span></div>
       <div class="ix-body">
         <div class="ix-view on" id="ix-list">
           <div class="ixr ixr-new" id="ixr-new"><span class="ixav ixav-s">S</span><div class="ixb"><b>Solicia</b><span id="ixr-new-sub">Working</span></div><span class="ixt" id="ixr-new-t"><i class="ixdot"></i>now</span></div>
-          <div class="ixr"><span class="ixav">MC</span><div class="ixb"><b>Michael Chen</b><span>RE: Due diligence, Tranche B docs</span></div><span class="ixt">9:41 am</span></div>
-          <div class="ixr"><span class="ixav">SW</span><div class="ixb"><b>Sarah Whitfield</b><span>Lease assignment, landlord consent</span></div><span class="ixt">9:23 am<i class="ixdot on"></i></span></div>
-          <div class="ixr"><span class="ixav">DP</span><div class="ixb"><b>David Park</b><span>Share purchase, conditions precedent</span></div><span class="ixt">8:55 am</span></div>
+          <div class="ixr ixr-new" id="ixr-you"><span class="ixav">You</span><div class="ixb"><b>You → paralegal@solicia.ai</b><span id="ixr-you-sub"></span></div><span class="ixt">now</span></div>
+          <div class="ixr"><span class="ixav">MC</span><div class="ixb"><b>Michael Chen</b><span>RE: Due diligence — Tranche B docs</span></div><span class="ixt">9:41 am</span></div>
+          <div class="ixr"><span class="ixav">SW</span><div class="ixb"><b>Sarah Whitfield</b><span>Lease assignment — landlord consent</span></div><span class="ixt">9:23 am<i class="ixdot on"></i></span></div>
+          <div class="ixr"><span class="ixav">DP</span><div class="ixb"><b>David Park</b><span>Share purchase — conditions precedent</span></div><span class="ixt">8:55 am</span></div>
         </div>
         <div class="ix-view" id="ix-comp">
           <div class="ix-card">
             <div class="ix-fld"><label>To</label><span class="chip2">paralegal@solicia.ai</span></div>
-            <div class="ix-fld"><label>Subject</label><b>Aurora termination fees</b></div>
+            <div class="ix-fld"><label>Subject</label><b id="ix-subj">Aurora — termination fees</b></div>
+            <div class="ix-chips" id="ix-chips" role="group" aria-label="Pick an instruction"></div>
             <p class="ix-typebody"><span id="demo-type"></span><span class="cursor" id="demo-cursor" style="background:var(--ink)"></span></p>
-            <span class="ix-send" id="ix-send">Send</span>
+            <button class="ix-send" id="ix-send" type="button">Send</button>
           </div>
         </div>
         <div class="ix-view" id="ix-thread">
-          <div class="ix-sub">Aurora termination fees</div>
+          <div class="ix-subrow"><span class="ix-back" id="ix-back">← Inbox</span><span class="ix-del" id="th-del">delivered in 7m 12s</span></div>
+          <div class="ix-sub" id="th-sub">Aurora — termination fees</div>
           <div class="ixm">
-            <div class="eh2"><span class="ixav">AR</span><div><b>Alexandra Reeve</b><span>To: paralegal@solicia.ai, 9:41</span></div></div>
-            <p>Compare termination-fee mechanics across the 12 Aurora agreements.</p>
+            <div class="eh2"><span class="ixav">You</span><div><b>You</b><span>To: paralegal@solicia.ai, 9:41</span></div></div>
+            <p id="th-q">Compare termination-fee mechanics across the 12 Aurora agreements.</p>
           </div>
           <div class="ixm ixm-s">
-            <div class="eh2"><span class="ixav ixav-s">S</span><div><b>Solicia</b><span>To: Alexandra Reeve, 9:48</span></div></div>
-            <p>Done. One row per agreement, each figure referenced to the clause it comes from.</p>
-            <div class="ix-att"><span class="fic fic-doc">DOCX</span><div><b>Aurora_termination_fees.docx</b><span>Sourced and checked</span></div></div>
+            <div class="eh2"><span class="ixav ixav-s">S</span><div><b>Solicia</b><span id="th-rt">To: you, 9:48</span></div></div>
+            <p id="th-r">Attached — termination-fee mechanics across the 12 agreements, table by counterparty. Flags in the final column.</p>
+            <div class="ix-att"><span class="fic fic-doc" id="th-fic">DOCX</span><div><b id="th-att">Aurora_termination_fees.docx</b><span id="th-att-s">14 pages · table by counterparty</span></div></div>
           </div>
+          <button class="ix-compose ix-again" id="ix-again" type="button">Run it again</button>
         </div>
       </div>
     </div>
@@ -1538,10 +1667,12 @@
   </div>
 </section>
 
-<section class="sec" style="padding-top:0">
-  <div class="wrap rv">
-    <p class="brfinal" style="margin-top:0">And the rest of the desk: markup, memos, indices, bundles, correspondence. A whole <em>paralegal</em>, one address.</p>
-    <div style="margin-top:28px"><a class="tlink" data-go="capabilities">Everything it takes on <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<section style="padding:clamp(20px,2.4vw,40px) 0 clamp(70px,7vw,110px)">
+  <div class="wrap">
+    <div class="brband lg rv">
+      <p class="brfinal">And the rest of the desk: markup, memos, indices, bundles, correspondence. A whole <em>paralegal</em>, one address.</p>
+      <a class="btn btn-burg" data-go="capabilities">See everything it takes on <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -1582,23 +1713,32 @@
       <div class="appwin awl lg" style="--del:-3s"><div class="awin">
         <div class="aw-out-top"><span class="aw-newbtn">New Email</span><span class="aw-title">Outlook</span></div>
         <div class="aw-tabs"><span class="on">Focused</span><span>Other</span></div>
-        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Meridian register, 9:12</span></div></div>
-        <div class="dvr"><span class="dva">MC</span><div><b>Michael Chen</b><span>RE: Tranche B documents</span></div></div>
-        <div class="dvr"><span class="dva">SW</span><div><b>Sarah Whitfield</b><span>Lease assignment</span></div></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Meridian register, one row per contract</span></div><span class="awt">9:12</span></div>
+        <div class="dvr"><span class="dva">MC</span><div><b>Michael Chen</b><span>RE: Tranche B documents</span></div><span class="awt">8:58</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Halcyon markup, changes tracked</span></div><span class="awt">8:44</span></div>
+        <div class="dvr"><span class="dva">SW</span><div><b>Sarah Whitfield</b><span>Lease assignment, consent</span></div><span class="awt">8:21</span></div>
+        <div class="dvr"><span class="dva">PR</span><div><b>Priya Raman</b><span>Completion agenda v3</span></div><span class="awt">Mon</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Fee ledger, reconciled</span></div><span class="awt">Mon</span></div>
       </div></div>
       <div class="appwin aw-main lg" style="--del:-6s"><div class="awin">
         <div class="dv-bar"><i></i><i></i><i></i><em>Apple Mail</em></div>
-        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Aurora termination fees</span></div><span class="awt">9:48</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Aurora termination fees — comparison attached</span></div><span class="awt">9:48</span></div>
         <div class="dvr"><span class="dva">AR</span><div><b>Alexandra Reeve</b><span>Halcyon signing bundle</span></div><span class="awt">8:55</span></div>
-        <div class="dvr"><span class="dva">DP</span><div><b>David Park</b><span>Share purchase</span></div><span class="awt">8:31</span></div>
+        <div class="dvr"><span class="dva">DP</span><div><b>David Park</b><span>Share purchase, conditions precedent</span></div><span class="awt">8:31</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Disclosure chronology — 150 emails, dated and cited</span></div><span class="awt">8:02</span></div>
+        <div class="dvr"><span class="dva">JW</span><div><b>James Wu</b><span>Counsel briefing note</span></div><span class="awt">7:56</span></div>
         <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Q1 board update, first draft</span></div><span class="awt">Mon</span></div>
+        <div class="dvr"><span class="dva">EH</span><div><b>Elena Haddad</b><span>Completion agenda</span></div><span class="awt">Mon</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Meridian data room, indexed and zipped</span></div><span class="awt">Fri</span></div>
       </div></div>
       <div class="appwin awr lg" style="--del:-9s"><div class="awin">
         <div class="aw-gm-top"><span class="aw-search">Search mail</span></div>
         <span class="aw-compose">Compose</span>
-        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Disclosure bundle, indexed</span></div></div>
-        <div class="dvr"><span class="dva">JW</span><div><b>James Wu</b><span>Counsel briefing note</span></div></div>
-        <div class="dvr"><span class="dva">EH</span><div><b>Elena Haddad</b><span>Completion agenda</span></div></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Disclosure bundle, indexed</span></div><span class="awt">9:31</span></div>
+        <div class="dvr"><span class="dva">JW</span><div><b>James Wu</b><span>Counsel briefing note</span></div><span class="awt">9:07</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Working model, formulas live</span></div><span class="awt">8:49</span></div>
+        <div class="dvr"><span class="dva">EH</span><div><b>Elena Haddad</b><span>Completion agenda</span></div><span class="awt">8:12</span></div>
+        <div class="dvr"><span class="dva dva-s">S</span><div><b>Solicia</b><span>Research memo, authorities attached</span></div><span class="awt">Mon</span></div>
       </div></div>
     </div>
   </div>
@@ -1760,7 +1900,11 @@
 
 <!-- ============================== CAPABILITIES ============================== -->
 <main id="page-capabilities" class="page">
-<section class="phero">
+<section class="phero" style="overflow:clip">
+  <div class="aur" aria-hidden="true">
+    <i style="left:-6%;top:-14%;width:560px;height:560px;background:rgba(154,53,80,.12);--dur:24s;--dx:80px;--dy:36px"></i>
+    <i style="right:-5%;top:16%;width:500px;height:500px;background:rgba(192,138,78,.11);--dur:30s;--del:-9s;--dx:-70px;--dy:-44px"></i>
+  </div>
   <div class="wrap caphero">
     <div class="rv">
       <span class="crumb">Capabilities</span>
@@ -1789,8 +1933,12 @@
   </div>
 </section>
 
-<section class="sec" style="padding-top:40px">
-  <div class="wrap">
+<section class="sec" style="padding-top:40px;position:relative;overflow:clip">
+  <div class="aur" aria-hidden="true">
+    <i style="left:16%;top:-40%;width:480px;height:480px;background:rgba(154,53,80,.09);--dur:28s;--dx:60px;--dy:40px"></i>
+    <i style="right:8%;bottom:-50%;width:520px;height:520px;background:rgba(192,138,78,.09);--dur:24s;--del:-7s;--dx:-50px;--dy:-30px"></i>
+  </div>
+  <div class="wrap" style="position:relative;z-index:2">
     <div class="proms rv">
       <div class="prom"><b>Sourced</b><p>Every figure and finding carries the clause or page it came from.</p></div>
       <div class="prom"><b>Auditable</b><p>The working shows. You can trace any line back to the file.</p></div>
@@ -1803,7 +1951,7 @@
 <section class="sec" style="padding-top:0;padding-bottom:0">
   <div class="wrap">
     <div class="sechead rv"><h2>No menu. No modules. No ceiling.</h2>
-    <p class="lede">Feature lists describe software. Solicia works the way a trained mind does: give it the material and the instruction, and it does the work. Anything that can be asked by email can be asked of it.</p></div>
+    <p class="lede">Feature lists describe software, and Solicia is closer to a colleague. Give it the material and the instruction, and it does the work — any work that can be asked in an email, in whatever form the answer should take.</p></div>
   </div>
   <div class="instream rv" aria-hidden="true">
     <div class="marq marq-a"><span class="ipill lg">Build the chronology from the disclosure bundle</span><span class="ipill lg">Mark up the SPA against our template</span><span class="ipill lg">Summarise 15 items across 50 contracts</span><span class="ipill lg">Draft the completion checklist</span><span class="ipill lg">Index the data room and send the zip</span><span class="ipill lg">Compare the leases for break rights</span><span class="ipill lg">Build the chronology from the disclosure bundle</span><span class="ipill lg">Mark up the SPA against our template</span><span class="ipill lg">Summarise 15 items across 50 contracts</span><span class="ipill lg">Draft the completion checklist</span><span class="ipill lg">Index the data room and send the zip</span><span class="ipill lg">Compare the leases for break rights</span></div>
@@ -1811,11 +1959,55 @@
   </div>
 </section>
 
-<section class="sec sec-dark" style="margin-top:clamp(80px,8vw,120px)">
+<section class="sec sec-dark morning" style="margin-top:clamp(80px,8vw,120px)">
+  <div class="aur" aria-hidden="true">
+    <i style="left:-8%;top:-18%;width:680px;height:680px;background:rgba(154,53,80,.32);--dur:26s;--dx:90px;--dy:44px"></i>
+    <i style="right:-7%;bottom:-26%;width:600px;height:600px;background:rgba(192,138,78,.2);--dur:32s;--del:-11s;--dx:-80px;--dy:-50px"></i>
+    <i style="left:36%;top:34%;width:440px;height:440px;background:rgba(110,35,56,.38);--dur:22s;--del:-5s;--dx:56px;--dy:64px"></i>
+  </div>
   <div class="wrap">
-    <div class="sechead rv"><h2>The arithmetic of one morning.</h2>
-    <p class="lede">Fifty contracts arrived at nine. The summaries were back before half past.</p></div>
-    <div class="stats stats-dark rv">
+    <div class="sechead rv"><h2>One morning. <em>Fifty contracts.</em></h2>
+    <p class="lede" style="max-width:56ch">This is the whole brief: one email, a zip attached. Every agreement read in full, fifteen items summarised from each, every entry cited to its clause. Back in the thread in twenty minutes.</p></div>
+    <div class="mgrid rv">
+      <div class="wm wm-cut" style="max-height:440px" aria-hidden="true">
+        <div class="wm-bar"><i></i><i></i><i></i><span class="wm-name">New Message</span></div>
+        <div class="me-head">
+          <div class="me-fld"><span>To</span><span class="chip">paralegal@solicia.ai</span></div>
+          <div class="me-fld"><span>Subject</span><b>Project Aurora — acquisition summaries</b></div>
+        </div>
+        <div class="me-body">
+          <div class="me-att"><span class="fic fic-zip">ZIP</span><div><b>Aurora_agreements.zip</b><span>50 files · 6,140 pages</span></div></div>
+          <p style="margin-top:8px">Attached are 50 acquisition agreements in a zip. I want a table summarising all of the attached docs, with a column for each and rows for the following:</p>
+          <ul>
+            <li>Agreement</li><li>Date(s)</li><li>Parties</li><li>Assets acquired / liabilities assumed</li>
+            <li>Purchase price</li><li>Deferred consideration</li><li>Conditions precedent</li><li>Regulatory approvals</li>
+            <li>Warranties — time and monetary limits</li><li>Warranty claims process</li><li>Indemnities</li>
+            <li>Non-compete</li><li>Non-solicit</li><li>MFN</li><li>Governing law</li>
+          </ul>
+          <p style="margin-top:10px">Need it before the 11:00.</p>
+        </div>
+      </div>
+      <div class="mread lg-dark">
+        <div class="mstatus"><span><i id="mtime">09:04</i> <span id="mstat">instruction received</span></span><em id="mcount">0 of 50 read</em></div>
+        <div class="swarm" id="swarm" aria-hidden="true"></div>
+        <div class="mfoot"><span>Every page of every file. <b>Nothing sampled.</b></span><span>Where the record says nothing: <b>Silent</b></span></div>
+        <div class="mret" id="mret">
+          <div class="wm xlm">
+            <div class="wm-bar"><i></i><i></i><i></i><span class="wm-name"><span class="fic fic-xls">XLSX</span>Aurora_acquisition_summary.xlsx</span></div>
+            <div class="xl-fx"><b>C4</b><span>fx</span><span>2.0% of consideration — cl 14.2(b)</span></div>
+            <div class="xl-grid" style="grid-template-columns:30px 96px repeat(3,1fr)">
+              <span class="xl-cl"></span><span class="xl-cl">A</span><span class="xl-cl">B</span><span class="xl-cl">C</span><span class="xl-cl">D</span>
+              <span class="xl-cl">1</span><span class="xl-lab">Item</span><span class="xl-hd">Aurora Supply</span><span class="xl-hd">Aurora Logistics</span><span class="xl-hd">Aurora Fleet</span>
+              <span class="xl-cl">2</span><span class="xl-lab">MFN</span><span>Yes — <span class="xl-src">cl 21.4</span></span><span class="xl-sil">Silent</span><span>Yes — <span class="xl-src">cl 18.2</span></span>
+              <span class="xl-cl">3</span><span class="xl-lab">Dates</span><span>12 Jun 2019</span><span>3 Feb 2021</span><span>30 Sep 2020</span>
+              <span class="xl-cl">4</span><span class="xl-lab">Termination</span><span>2.0% — <span class="xl-src">cl 14.2(b)</span></span><span>3.5% — <span class="xl-src">cl 9.1</span></span><span class="xl-sil">Silent</span>
+              <span class="xl-cl">5</span><span class="xl-lab">Assignment</span><span>Consent — <span class="xl-src">cl 22.1</span></span><span>Free — <span class="xl-src">cl 17</span></span><span>Consent — <span class="xl-src">cl 19.4</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats stats-dark rv" style="margin-top:clamp(44px,4.5vw,70px)">
       <div class="stat"><b data-cnt="50">0</b><span>contracts, read in full</span></div>
       <div class="stat"><b data-cnt="15">0</b><span>items summarised, per contract</span></div>
       <div class="stat"><b data-cnt="750">0</b><span>entries, each read off the clause</span></div>
@@ -1837,7 +2029,7 @@
         <span class="go">Explore <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
       <a class="exc exc-dark" data-go="verification">
-        <div><h3>Verification</h3><p>Why every file comes back checkable, with sources attached and uncertainty visible.</p></div>
+        <div><h3>Verification</h3><p>Why its files never need a second pass: nothing invented, every line sourced.</p></div>
         <span class="go">Explore <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
     </div>
@@ -2036,15 +2228,22 @@
 <main id="page-verification" class="page">
 <section class="phero"><div class="wrap">
   <span class="crumb rv">Capabilities / Verification</span>
-  <h1 class="rv">Work you can <em>check</em>, not work you must trust.</h1>
-  <p class="lede rv">Sources stay attached. Formulas stay live. Uncertainty stays visible. Every file comes back ready to be reviewed against the record.</p>
+  <h1 class="rv">The work you <em>don't have to check</em>.</h1>
+  <p class="lede rv">Solicia does not hallucinate. Every figure is read off the clause, every claim carries its page, and where the record says nothing, the file says Silent. The sources come back attached — so checking is a choice, not a chore.</p>
 </div></section>
 
 <section class="sec" style="padding-top:30px">
   <div class="wrap trio rv">
-    <div class="tri tri-paper"><b>Sources stay attached</b><p>Every figure and finding carries the clause it came from, footnoted in the file itself.</p><span class="srcchip">Clause 14.2(b), Aurora SPA</span></div>
+    <div class="tri tri-paper"><b>Nothing invented</b><p>Every figure is read off the record, never guessed. The clause it came from is footnoted in the file itself.</p><span class="srcchip">Clause 14.2(b), Aurora SPA</span></div>
     <div class="tri tri-beige"><b>Formulas stay live</b><p>Models come back as working spreadsheets. Change an input and the workbook recalculates.</p></div>
     <div class="tri tri-dark"><b>Silent, by convention</b><p>Where the documents say nothing, the cell says so. Nothing is invented to fill a gap.</p><br><span class="silent">Silent</span></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap statement rv">
+    <h2>Checked is built in. <em>Checking is optional.</em></h2>
+    <p>The first week, you review every line against the attached sources, and every line holds. The second week, you spot-check. By the third, you open the file and send it on — because nothing was ever invented, there was never anything to catch.</p>
   </div>
 </section>
 
@@ -2068,15 +2267,15 @@
   <div class="wrap">
     <div class="honest rv">
       <div><h3>The work it leaves to you.</h3></div>
-      <div><p>It does not advise, decide or sign. Every file comes back for review by the lawyer whose name goes on it. That is the design, not a limitation.</p></div>
+      <div><p>It does not advise, decide or sign. The file returns to the lawyer whose name goes on it — for judgment, not for proof-reading. That is the design, not a limitation.</p></div>
     </div>
   </div>
 </section>
 
 <section class="sec" style="padding-top:0">
   <div class="wrap"><div class="ctaband rv">
-    <h2>Review it against the source.</h2>
-    <p>Sourced, auditable and honest about what it does not know.</p>
+    <h2>Stop re-doing the first pass.</h2>
+    <p>Sourced to the clause, Silent where the record is, and nothing invented in between.</p>
     <a class="btn btn-ivory" data-go="access">Request access</a>
   </div></div>
 </section>
@@ -2380,63 +2579,121 @@ if(hero && !RM){
   }
 }
 
-/* ---------- inbox demo ---------- */
+/* ---------- inbox demo (manual, mirrors the live site) ---------- */
 var ixList=$("#ix-list"), ixComp=$("#ix-comp"), ixThread=$("#ix-thread");
-var demoVisible=false, demoRunning=false, demoTok=0;
-var DM1="Compare termination-fee mechanics across the 12 Aurora agreements.";
+var IXD=[
+ {chip:"Compare", sub:"Aurora — termination fees",
+  body:"Compare termination-fee mechanics across the 12 Aurora agreements.",
+  work:["Reading 1,412 pages across 12 agreements…","Drafting — table by counterparty…","Checking 31 citations against source…"],
+  reply:"Attached — termination-fee mechanics across the 12 agreements, table by counterparty. Flags in the final column.",
+  fic:"fic-doc", lab:"DOCX", file:"Aurora_termination_fees.docx", att:"14 pages · table by counterparty", del:"7m 12s", t:"9:48"},
+ {chip:"Search", sub:"Meridian — change of control",
+  body:"Find every change-of-control clause in the Meridian data room and build the register.",
+  work:["Reading the data room — 214 documents…","Building the register — one row per agreement…","Checking 46 citations against source…"],
+  reply:"Attached — the register, one row per agreement, every clause quoted and referenced. Four fields are marked Silent.",
+  fic:"fic-xls", lab:"XLSX", file:"Meridian_CoC_register.xlsx", att:"one row per agreement · 4 marked Silent", del:"11m 03s", t:"9:52"},
+ {chip:"Chronology", sub:"Hartley — disclosure chronology",
+  body:"Build the chronology from the disclosure bundle, every date sourced.",
+  work:["Reading 150 emails across two volumes…","Dating the facts — 61 entries…","Attaching a source to every date…"],
+  reply:"Attached — the chronology, one row per email, every date carrying the message it came from.",
+  fic:"fic-doc", lab:"DOCX", file:"Disclosure_chronology.docx", att:"61 entries · every date sourced", del:"14m 27s", t:"10:02"},
+ {chip:"Draft", sub:"Q1 board update",
+  body:"Draft the six-slide board update on the Q1 acquisition.",
+  work:["Reading the matter file…","Drafting six slides…","Checking the figures against the model…"],
+  reply:"Attached — six slides, built from the matter file. Speaker notes included.",
+  fic:"fic-ppt", lab:"PPTX", file:"Q1_board_update.pptx", att:"6 slides · board ready", del:"8m 41s", t:"9:51"}
+];
 function ixShow(v){ [ixList,ixComp,ixThread].forEach(function(x){ x.classList.toggle("on", x===v); }); }
 if(ixList){
-  var dio=new IntersectionObserver(function(es){
-    es.forEach(function(en){ demoVisible=en.isIntersecting; if(demoVisible && !demoRunning) runDemo(); });
-  },{threshold:.25});
-  dio.observe($("#sec-demo"));
-  $("#ix-compose").addEventListener("click", function(){ demoTok++; runDemo(); });
-}
-function runDemo(){
-  demoRunning=true;
-  var tok=++demoTok;
-  function dead(){ return !demoVisible || tok!==demoTok; }
-  function stop(){ if(tok===demoTok) demoRunning=false; }
-  var t1=$("#demo-type"), send=$("#ix-send"), nr=$("#ixr-new"), nrs=$("#ixr-new-sub"), nrt=$("#ixr-new-t"), hint=$("#ix-hint");
-  nr.classList.remove("show"); t1.textContent=""; send.classList.remove("pressed");
-  nrt.innerHTML='<i class="ixdot"></i>now';
-  if(RM){ ixShow(ixThread); hint.textContent="The reply, in the same thread"; return; }
-  hint.textContent="Click to see it in action";
-  ixShow(ixList);
-  setTimeout(function(){
-    if(dead()) return stop();
-    hint.textContent="Composing";
-    ixShow(ixComp);
-    var i=0;
-    (function t(){
-      if(dead()) return stop();
-      if(i<DM1.length){ t1.textContent+=DM1[i++]; setTimeout(t,22); }
-      else setTimeout(function(){
-        if(dead()) return stop();
-        send.classList.add("pressed");
-        setTimeout(function(){
-          if(dead()) return stop();
-          hint.textContent="Sent. Solicia is working";
-          ixShow(ixList); nr.classList.add("show"); nrs.textContent="Working";
-          var words=["Reading the agreements","Drafting","Checking citations"], wi=0;
-          (function w(){
-            if(dead()) return stop();
-            if(wi<words.length){ nrs.textContent=words[wi++]; setTimeout(w,950); }
-            else{
-              nrs.textContent="Aurora termination fees";
-              nrt.innerHTML='<i class="ixdot on"></i>9:48 am';
-              setTimeout(function(){
-                if(dead()) return stop();
-                hint.textContent="The reply, in the same thread";
-                ixShow(ixThread);
-                setTimeout(function(){ if(dead()) return stop(); runDemo(); },5400);
-              },1500);
-            }
-          })();
-        },650);
-      },700);
+  var ixIdx=0, ixTok=0, ixBusy=false;
+  var hint=$("#ix-hint"), compBtn=$("#ix-compose"), sendBtn=$("#ix-send"),
+      nr=$("#ixr-new"), nrs=$("#ixr-new-sub"), nrt=$("#ixr-new-t"),
+      yr=$("#ixr-you"), yrs=$("#ixr-you-sub"),
+      tType=$("#demo-type"), subjEl=$("#ix-subj"), chipsEl=$("#ix-chips");
+  IXD.forEach(function(d,i){
+    var b=document.createElement("button"); b.type="button"; b.className="ixc"; b.textContent=d.chip;
+    b.addEventListener("click", function(){ if(!ixBusy) ixPick(i,true); });
+    chipsEl.appendChild(b);
+  });
+  var ixChips=$$(".ixc",chipsEl);
+  function ixPick(i, fast){
+    ixIdx=i;
+    ixChips.forEach(function(c,j){ c.classList.toggle("on", j===i); });
+    var d=IXD[i], tok=++ixTok;
+    subjEl.textContent=d.sub;
+    sendBtn.classList.remove("pulse");
+    if(RM){ tType.textContent=d.body; sendBtn.classList.add("pulse"); return; }
+    tType.textContent="";
+    var k=0, speed=fast?9:16;
+    (function tt(){
+      if(tok!==ixTok) return;
+      if(k<d.body.length){ tType.textContent+=d.body[k++]; setTimeout(tt,speed); }
+      else sendBtn.classList.add("pulse");
     })();
-  },1600);
+  }
+  function ixCompose(){
+    ixTok++; ixBusy=false;
+    compBtn.classList.remove("pulse");
+    hint.textContent="Pick an instruction, then send";
+    ixShow(ixComp);
+    ixPick(ixIdx,false);
+  }
+  compBtn.addEventListener("click", ixCompose);
+  sendBtn.addEventListener("click", function(){
+    if(!ixComp.classList.contains("on") || ixBusy) return;
+    ixBusy=true;
+    var d=IXD[ixIdx], tok=++ixTok;
+    function dead(){ return tok!==ixTok; }
+    sendBtn.classList.remove("pulse");
+    hint.textContent="Sent";
+    yrs.textContent=d.sub+" · sent just now";
+    nr.classList.remove("show");
+    yr.classList.add("show");
+    ixShow(ixList);
+    setTimeout(function(){ if(dead())return; yrs.textContent=d.sub+" · received — authorized sender"; },700);
+    setTimeout(function(){
+      if(dead())return;
+      hint.textContent="Solicia is working";
+      nrs.textContent=d.work[0]; nrt.innerHTML='<i class="ixdot"></i>now';
+      nr.classList.add("show");
+      var wi=1;
+      (function w(){
+        if(dead())return;
+        if(wi<d.work.length){ setTimeout(function(){ if(dead())return; nrs.textContent=d.work[wi++]; w(); },1050); }
+        else setTimeout(function(){
+          if(dead())return;
+          nrs.textContent="Re: "+d.sub+" · 1 attachment";
+          nrt.innerHTML='<i class="ixdot on"></i>'+d.t;
+          hint.textContent="The reply lands in the same thread";
+          setTimeout(function(){
+            if(dead())return;
+            $("#th-del").textContent="delivered in "+d.del;
+            $("#th-sub").textContent=d.sub;
+            $("#th-q").textContent=d.body;
+            $("#th-r").textContent=d.reply;
+            $("#th-rt").textContent="To: you, "+d.t;
+            var f=$("#th-fic"); f.className="fic "+d.fic; f.textContent=d.lab;
+            $("#th-att").textContent=d.file; $("#th-att-s").textContent=d.att;
+            ixShow(ixThread);
+            hint.textContent="Delivered in "+d.del;
+            ixBusy=false;
+          },1400);
+        },1000);
+      })();
+    },1300);
+  });
+  $("#ix-back").addEventListener("click", function(){
+    ixTok++; ixBusy=false;
+    hint.textContent="← Click to see it in action";
+    compBtn.classList.add("pulse");
+    ixShow(ixList);
+  });
+  $("#ix-again").addEventListener("click", function(){
+    ixTok++; ixBusy=false;
+    nr.classList.remove("show"); yr.classList.remove("show");
+    ixIdx=(ixIdx+1)%IXD.length;
+    ixCompose();
+  });
 }
 
 /* ---------- terminals / readlog ---------- */
@@ -2477,6 +2734,63 @@ if(arts.length){
     auto = setInterval(function(){ if(!userTouched) bringToFront(order[1]); }, 5200);
   }
   apply();
+}
+
+/* ---------- capabilities: morning swarm ---------- */
+var swarmEl=$("#swarm");
+if(swarmEl){
+  var sChips=[];
+  for(var sc=0;sc<50;sc++){ var sce=document.createElement("i"); swarmEl.appendChild(sce); sChips.push(sce); }
+  var mret=$("#mret"), mstat=$("#mstat"), mcount=$("#mcount"), mtime=$("#mtime");
+  var sVis=false, sRun=false, sTok=0;
+  var sio=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      sVis=en.isIntersecting;
+      if(sVis){ if(!sRun) srun(); }
+      else { sRun=false; sTok++; }
+    });
+  },{threshold:.3});
+  sio.observe(swarmEl.closest(".mread"));
+  function srun(){
+    sRun=true;
+    var tok=++sTok;
+    function sdead(){ return !sVis || tok!==sTok; }
+    if(RM){
+      sChips.forEach(function(c){ c.className="dn"; });
+      mtime.textContent="09:24"; mstat.textContent="returned to the thread";
+      mcount.textContent="50 of 50 read"; mret.classList.add("in"); return;
+    }
+    sChips.forEach(function(c){ c.className=""; });
+    mret.classList.remove("in");
+    mtime.textContent="09:04"; mstat.textContent="instruction received"; mcount.textContent="0 of 50 read";
+    var doneN=0;
+    setTimeout(function(){
+      if(sdead()) return;
+      mtime.textContent="09:05"; mstat.textContent="reading 50 files in parallel";
+      sChips.forEach(function(_,i){
+        var k=(i*17+3)%50;
+        setTimeout(function(){
+          if(sdead()) return;
+          sChips[k].classList.add("rd");
+          setTimeout(function(){
+            if(sdead()) return;
+            sChips[k].classList.remove("rd"); sChips[k].classList.add("dn");
+            doneN++; mcount.textContent=doneN+" of 50 read";
+            if(doneN===50){
+              mtime.textContent="09:19"; mstat.textContent="750 entries assembled, checked";
+              setTimeout(function(){
+                if(sdead()) return;
+                mtime.textContent="09:24"; mstat.textContent="returned to the thread";
+                mcount.textContent="20 minutes, send to reply";
+                mret.classList.add("in");
+                setTimeout(function(){ if(sdead()) return; srun(); }, 8600);
+              }, 1200);
+            }
+          }, 640);
+        }, i*74);
+      });
+    }, 950);
+  }
 }
 
 /* ---------- ROI ---------- */
@@ -2683,18 +2997,25 @@ function xr(a,b){ return "<div class='xa-r'><span>"+a+"</span><span class='xa-sr
 var XAM=[
  {q:"Could it build a chronology from 150 emails, with every date carrying its source?",
   a:"As a working document, every entry referenced to the message it came from.",
-  art:xaDoc("Disclosure_chronology.docx",
-    xr("14 Mar 2024, first defect complaint","Email 041")+
-    xr("2 Apr 2024, notice of defect served","Email 067")+
-    xr("19 May 2024, replacement refused","Email 112"),
-    "150 emails read. Every date referenced.")},
+  art:"<div class='wm wm-cut' style='max-height:252px'><div class='wm-bar'><i></i><i></i><i></i><span class='wm-name'><span class='fic fic-doc'>DOCX</span>Disclosure_chronology.docx</span></div>"+
+    "<div class='docpage'><p class='doc-h'>Chronology of correspondence</p><p class='doc-sub'>Hartley v. Reeve Manufacturing — prepared from 150 emails, disclosure vols 1&#8211;2</p>"+
+    "<table class='doctbl'><tr><th style='width:18%'>Date</th><th style='width:28%'>Document</th><th>Summary</th><th style='width:9%'>Ref</th></tr>"+
+    "<tr><td>3 Mar 2024</td><td>Email, J.&nbsp;Hartley to A.&nbsp;Reeve</td><td>Hartley asserts the units failed inspection on delivery</td><td class='dt-ref'>1</td></tr>"+
+    "<tr><td>21 Mar 2024</td><td>Email, A.&nbsp;Reeve to J.&nbsp;Hartley</td><td>Reeve gives formal notice of defect under clause 8.2</td><td class='dt-ref'>2</td></tr>"+
+    "<tr><td>2 Apr 2024</td><td>Email, J.&nbsp;Hartley to A.&nbsp;Reeve</td><td>Hartley refuses replacement, relying on the Schedule 2 tolerances</td><td class='dt-ref'>3</td></tr>"+
+    "<tr><td>19 May 2024</td><td>Email, A.&nbsp;Reeve to J.&nbsp;Hartley</td><td>Reeve rejects the tolerance argument and reserves rights</td><td class='dt-ref'>4</td></tr></table></div></div>"},
  {q:"Would the twentieth contract be read as carefully as the first?",
   a:"Every page of every one. Where an agreement says nothing, the cell says Silent.",
-  art:xaXls("Diligence_summary.xlsx",
-    xr("Aurora Supply 2019, 2.0%","Cl 14.2(b)")+
-    xr("Aurora Logistics, 3.5%","Cl 9.1")+
-    xr("Aurora Fleet, <span class='xa-sil'>Silent</span>","Reviewed in full"),
-    "Row 20 of 20. Nothing sampled.")},
+  art:"<div class='wm xlm'><div class='wm-bar'><i></i><i></i><i></i><span class='wm-name'><span class='fic fic-xls'>XLSX</span>Diligence_summary.xlsx</span></div>"+
+    "<div class='xl-fx'><b>C3</b><span>fx</span><span>2.0% of consideration &#8212; cl 14.2(b)</span></div>"+
+    "<div class='xl-grid wm-cutr' style='grid-template-columns:24px 84px repeat(3,1fr)'>"+
+    "<span class='xl-cl'></span><span class='xl-cl'>A</span><span class='xl-cl'>B</span><span class='xl-cl'>C</span><span class='xl-cl'>D</span>"+
+    "<span class='xl-cl'>1</span><span class='xl-lab'>Item</span><span class='xl-hd'>Aurora Supply</span><span class='xl-hd'>Aurora Logistics</span><span class='xl-hd'>Aurora Fleet</span>"+
+    "<span class='xl-cl'>2</span><span class='xl-lab'>MFN</span><span>Yes &#8212; <span class='xl-src'>cl 21.4</span></span><span class='xl-sil'>Silent</span><span>Yes &#8212; <span class='xl-src'>cl 18.2</span></span>"+
+    "<span class='xl-cl'>3</span><span class='xl-lab'>Termination</span><span>2.0% &#8212; <span class='xl-src'>cl 14.2(b)</span></span><span>3.5% &#8212; <span class='xl-src'>cl 9.1</span></span><span class='xl-sil'>Silent</span>"+
+    "<span class='xl-cl'>4</span><span class='xl-lab'>Dates</span><span>12 Jun 2019</span><span>3 Feb 2021</span><span>30 Sep 2020</span>"+
+    "<span class='xl-cl'>5</span><span class='xl-lab'>Assignment</span><span>Consent &#8212; <span class='xl-src'>cl 22.1</span></span><span>Free &#8212; <span class='xl-src'>cl 17</span></span><span>Consent &#8212; <span class='xl-src'>cl 19.4</span></span>"+
+    "</div><p class='xa-note' style='padding:8px 12px'>Twenty columns, one per contract. The twentieth reads like the first.</p></div>"},
  {q:"Does the model come back with formulas live, or as a picture of one?",
   a:"Live. Change an input and the workbook recalculates.",
   art:xaXls("Working_model.xlsx",
@@ -2703,11 +3024,14 @@ var XAM=[
     xr("Terminal growth, 2.1%","Input, referenced"),
     "Change a number; the model answers.")},
  {q:"Would it copy your attached example perfectly, or would the letterhead be wrong?",
-  a:"To the letter: your letterhead, your numbering, your defined terms.",
-  art:"<div class='xa xa-lh'><p class='xa-lhname'>REEVE &amp; CALLOWAY LLP</p><p class='xa-lhsub'>Solicitors</p><div class='xa-rule'></div>"+
-    xr("1.&nbsp;&nbsp;Definitions and interpretation","House style")+
-    xr("2.&nbsp;&nbsp;Services and term","Your numbering")+
-    "<p class='xa-note'>The firm's document, not a lookalike.</p></div>"},
+  a:"To the letter. Attach one example, and the file returns in its image: colours, headings, letterhead, numbering.",
+  art:"<div class='xa-match'><span class='fic fic-pdf'>PDF</span><span>Your example: <em>Northcote_policy_example.pdf</em> &#8212; style matched</span></div>"+
+    "<div class='wm wm-cut' style='max-height:236px'><div class='wm-bar'><i></i><i></i><i></i><span class='wm-name'><span class='fic fic-doc'>DOCX</span>Privacy_policy.docx</span></div>"+
+    "<div class='stylem'><span class='sm-bar'></span><div class='sm-page'>"+
+    "<p class='sm-logo'>NORTHCOTE</p><p class='sm-title'>Privacy Policy</p><p class='sm-it'>Last updated: March 2026</p>"+
+    "<p class='sm-h'>Our Commitment To Privacy</p><p class='sm-p'>We are committed to managing personal data securely, responsibly, and in accordance with applicable data protection laws. This policy explains how personal data is collected, used and retained when we act as controller&#8230;</p>"+
+    "<p class='sm-h'>Accountability And Oversight</p><p class='sm-p'>We have established governance structures, policies, procedures and controls to support compliance, assessed in proportion to the nature, scope and context of processing&#8230;</p>"+
+    "</div></div></div>"},
  {q:"Would it fill in your template, or just build a new table?",
   a:"It fills in yours, and the same file returns completed.",
   art:xaXls("Your_template.xlsx",
